@@ -1,2 +1,3 @@
 # dotfiles
-Configuration files
+
+- **[`vim/init.vim`](init.vim)** : neo vim configuration
