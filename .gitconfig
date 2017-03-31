@@ -1,0 +1,52 @@
+[alias]
+	ci = commit
+	# dsf : requires diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
+	dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
+       	fl = diff-tree --no-commit-id --name-only -r
+	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	pr = pull --rebase
+	st = status
+[color]
+	# Always use colored output for git diff (even when redirected)
+	diff = always
+	# auto : use color for terminals' output (if supported), do not use for redirection
+	ui = auto
+[color "diff"]
+	frag = magenta
+	meta = yellow
+	whitespace = red
+[color "diff-highlight"]
+	newHighlight = "green bold 22"
+	newNormal = "green bold"
+	oldHighlight = "red bold 52"
+	oldNormal = "red bold"
+[core]
+	# autocrlf = true
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	# Don't consider trailing space as a cause for merge conflicts
+	whitespace = -trailing-space
+[diff]
+	# Use better, descriptive initials (c, i, w) instead of a/b
+	mnemonicPrefix = true
+	# Show renames/moves as such
+	renames = true
+	tool = meld
+[help]
+	autocorrect = 1
+[log]
+	# Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+	abbrevCommit = true
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+[push]
+	default = upstream
+	followTags = true
+[status]
+	showUntrackedFiles = all
+[user]
+	email = olivier4.martin@orange.com
+	name = Olivier Martin
+[url "https://"]
+	insteadOf = git://
