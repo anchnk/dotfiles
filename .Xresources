@@ -1,0 +1,26 @@
+! ------------------------------------------------------------------------------
+! Xft
+! ------------------------------------------------------------------------------
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.autohing:	false
+Xft.hintstyle: 	hintslight
+Xft.lcdfilter:	lcddefault
+!Xft.hintstyle:  hintfull
+
+! ------------------------------------------------------------------------------
+! ROFI
+! ------------------------------------------------------------------------------
+rofi.font:	Ubuntu Mono 10
+rofi.opacity:	100
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled:     true
+rofi.color-window:      #2f1e2e, argb:0ef6155, argb:4eef6155
+rofi.color-normal:      argb:a02f1e2e, #b4b4b4, argb:a02f1e2e, argb:54815ba4, #ffffff
+rofi.color-active:      argb:272f1e2e, #815ba4, argb:2f2f1e2e, argb:54815ba4, #815ba4
+rofi.color-urgent:      argb:272f1e2e, #ef6155, argb:2f2f1e2e, argb:54815ba4, #ef6155
+rofi.separator-style:   solid
