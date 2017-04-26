@@ -12,8 +12,17 @@ Xft.rgba:       rgb
 ! ------------------------------------------------------------------------------
 ! ROFI
 ! ------------------------------------------------------------------------------
-rofi.font:	Ubuntu Mono 10
-rofi.opacity:	100
+rofi.font: Hack regular 11
+rofi.fullscreen: true
+rofi.lines: 6
+rofi.line-margin: 10
+rofi.terminal:	gnome-terminal
+rofi.separator-style: none
+!rofi.run-shell-command: {terminal} -e sh -c 'tmux new-session "{cmd}"'
+rofi.opacity: 90
+rofi.tokenize: false
+rofi.padding: 300px
+rofi.bw: 0
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
