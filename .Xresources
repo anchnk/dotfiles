@@ -3,12 +3,11 @@
 ! ------------------------------------------------------------------------------
 Xft.dpi:        96
 Xft.antialias:  true
+Xft.autohint:		true
 Xft.hinting:    true
-Xft.rgba:       rgb
-Xft.autohing:	false
 Xft.hintstyle: 	hintslight
 Xft.lcdfilter:	lcddefault
-!Xft.hintstyle:  hintfull
+Xft.rgba:       rgb
 
 ! ------------------------------------------------------------------------------
 ! ROFI
