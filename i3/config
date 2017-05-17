@@ -101,8 +101,8 @@ shortcut. Do you really want to exit i3? This will end your X session.' -b \
 bindsym F2 exec --no-startup-id rofi -show run
 
 # Screen Brightness
-bindsym XF86MonBrightnessUp exec brightlight -i 50
-bindsym XF86MonBrightnessDown exec brightlight -d 50
+bindsym XF86MonBrightnessUp exec brightlight -i 60
+bindsym XF86MonBrightnessDown exec brightlight -d 60
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
