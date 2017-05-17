@@ -104,6 +104,8 @@ bindsym F2 exec --no-startup-id rofi -show run
 bindsym XF86MonBrightnessUp exec brightlight -i 60
 bindsym XF86MonBrightnessDown exec brightlight -d 60
 
+# Nautilus
+bindsym $mod+n exec nautilus --no-desktop --new-window
 # resize window (you can also use the mouse for that)
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
