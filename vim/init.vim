@@ -93,9 +93,9 @@ autocmd FileType gitcommit set textwidth=72
 set termguicolors
 
 " Highights
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE
-\ guifg=DarkOrchid4 guibg=NONE
-highlight Search term=bold cterm=bold ctermfg=Red ctermbg=NONE
+"highlight Search term=bold cterm=bold ctermfg=Red ctermbg=NONE
+"highlight NonText ctermfg=5
+"hi Normal guibg=NONE ctermbg=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
