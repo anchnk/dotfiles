@@ -1,16 +1,38 @@
-; vim:filetype=ini
+; vim:filetype=dosini
+
+[colors]
+; Dracula theme palette
+background = #282a36
+current-line = #44475a
+selection = #44475a
+foreground = #f8f8f2
+cyan = #8be9fd
+green = #50fa7b
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+red = #ff5555
+yellow = #f1fa8c
 
 [bar/top]
+; Monitors
 monitor = DP-1-1
 monitor-fallback = eDP-1
-width = 100%
-height = 35
-fixed-center = true
-offset-x = 8
-offset-y = 0
 
-background = #5a000000
-foreground = #eee
+; Bar dimensions
+width = 100%
+height = 40
+
+; Colors
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Fixed center position for modules-center
+fixed-center = true
+
+line-size = 6
+line-color = #fff
+
 
 underline-size = 2
 underline-color = #eee
@@ -21,31 +43,35 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Noto Sans:pixelsize=12;0
-font-1 = FontAwesome:size=10;-2
+; Fonts
+;font-0 = Noto Sans:pixelsize=12;0
+font-0 = Ubuntu Mono:size=10;-1
+font-1 = FontAwesome:size=10;0
 font-2 = siji:pixelsize=10;0
+
 
 modules-left = i3
 modules-center = xwindow
 ;modules-right = battery volume mpd spotify date powermenu
-modules-right = wireless-network battery volume date powermenu
+modules-right = wireless-network volume battery date powermenu
 
 ;tray-position = right
 ;tray-padding = 2
 ;tray-background = #66333333
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 ; MODULES
 [module/i3]
 type = internal/i3
 
 index-sort = true
-strip-wsnumbers = false
+strip-wsnumbers = udoalse
 ws-icon-0 = 1: term;
+ws-icon-2 = 2: code;{}
 ws-icon-1 = 3: evolution;
-ws-icon-2 = 2: code;
+;ws-icon-2 = 2: code;
 ws-icon-3 = 5: web;
 ws-icon-4 = 9: music;
 ;ws-icon-2 = chat;
@@ -56,40 +82,12 @@ ws-icon-default = 
 format = <label-state> <label-mode>
 
 label-focused = %icon%
-label-focused-background = #88000000
-;label-focused-underline = #88ff5555
-label-focused-underline= #ddd
+label-focused-foreground = ${colors.green}
+label-focused-underline = ${colors.green}
 label-focused-padding = 4
 
 label-unfocused = %icon%
 label-unfocused-padding = 4
-label-occupied = %icon%
-label-occupied-padding = 4
-
-label-urgent = %icon%
-label-urgent-padding = 4
-
-label-empty = %icon%
-label-empty-foreground = #44ffffff
-label-empty-padding = 4
-
-[module/bspwm]
-type = internal/bspwm
-
-ws-icon-0 = web;
-ws-icon-1 = term;
-ws-icon-2 = chat;
-ws-icon-3 = code;
-ws-icon-4 = music;
-ws-icon-default = 
-
-format = <label-state> <label-mode>
-
-label-focused = %icon%
-label-focused-background = #88000000
-label-focused-underline = #ff50fa7b
-;label-focused-underline= #ddd
-label-focused-padding = 4
 
 label-occupied = %icon%
 label-occupied-padding = 4
@@ -125,10 +123,7 @@ date-alt = %A, %d %B %Y
 time-alt = %H:%M:%S
 
 label = %date% %time%
-format =    <label>
-;format-background = #ddffffff
-format-background = #88000000
-;format-foreground = #333
+format =  <label>
 format-padding = 3
 
 [module/padding]
@@ -138,8 +133,24 @@ content-foreground = #00000000
 content-background = #55000000
 
 [module/wireless-network]
+
 type = internal/network
 interface=wlp2s0
+
+format-connected = <label-connected>
+format-connected-padding = 2
+
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 2
+
+label-connected =  %essid%
+label-disconnected =   None
+
+[module/wired-network]
+
+type = internal/network
+interface = enp0s31f6
+
 
 [module/battery]
 type = internal/battery
@@ -151,9 +162,9 @@ adapter = AC
 
 poll-interval = 5
 
-format-charging = <animation-charging>  <label-charging>
-format-discharging = <ramp-capacity>  <label-discharging>
-format-full = <ramp-capacity>  <label-full>
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
@@ -174,16 +185,16 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-ramp-capacity-0-foreground = #88ff5555
-ramp-capacity-1-foreground = #88ff5555
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1-foreground = ${colors.red}
 
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>  <label-volume>
+format-volume = <ramp-volume><label-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
-label-muted =   muted
+label-muted = muted
 label-muted-foreground = #aaa
 format-volume-padding = 3
 format-muted-padding = 3
@@ -211,7 +222,6 @@ type = custom/menu
 
 label-open = 
 label-close = cancel
-;label-close-background = #dd0000
 label-close-foreground = #fff
 label-open-padding = 4
 label-close-padding = 3
@@ -237,41 +247,3 @@ menu-2-0-padding = 3
 menu-3-0 = logout ?
 menu-3-0-exec = i3-msg exit
 menu-3-0-padding = 3
-
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-password =
-
-; Seconds to sleep between progressbar/song timer sync
-; Default: 1
-interval = 2
-
-; Available tags:
-;   <label-song> (default)
-;   <label-time>
-;   <bar-progress>
-;   <toggle> - gets replaced with <icon-(pause|play)>
-;   <toggle-stop> - gets replaced with <icon-(stop|play)>
-;   <icon-random>
-;   <icon-repeat>
-;   <icon-repeatone>
-;   <icon-prev>
-;   <icon-stop>
-;   <icon-play>
-;   <icon-pause>
-;   <icon-next>
-;   <icon-seekb>
-;   <icon-seekf>
-format-online =    <label-song>
-
-; Available tokens:
-;   %artist%
-;   %album%
-;   %date%
-;   %title%
-; Default: %artist% - %title%
-label-song = %title%
-format-online-padding = 3
