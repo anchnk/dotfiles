@@ -30,19 +30,20 @@ color dracula
 " vim-airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline_mode_map = {
-  \ '__' : '-',
-  \ 'n'  : 'N',
-  \ 'i'  : 'I',
-  \ 'R'  : 'R',
-  \ 'c'  : 'C',
-  \ 'v'  : 'V',
-  \ 'V'  : 'V',
-  \ '' : 'V',
-  \ 's'  : 'S',
-  \ 'S'  : 'S',
-  \ '' : 'S',
-  \ }
+let g:airline_theme='dracula'
+"let g:airline_mode_map = {
+"  \ '__' : '-',
+"	\ 'n'  : 'N',
+"	\ 'i'  : 'I',
+"	\ 'R'  : 'R',
+"	\ 'c'  : 'C',
+"	\ 'v'  : 'V',
+"	\ 'V'  : 'V',
+"	\ '' : 'V',
+"	\ 's'  : 'S',
+"	\ 'S'  : 'S',
+"	\ '' : 'S',
+"	\ }
 
 " nerdtree Settings
 map <C-k><C-b> :NERDTreeToggle<CR>
@@ -61,6 +62,15 @@ set foldmethod=syntax
 set foldlevelstart=20
 let g:javascript_plugin_jsdoc = 1
 
+" typescript-vim
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+
+let g:vim_markdown_conceal = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Global Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
