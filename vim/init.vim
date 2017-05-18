@@ -4,14 +4,22 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'goatslacker/mango.vim'
+Plug 'dracula/vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'leafgarland/typescript-vim'
 Plug 'shutnik/jshint2.vim'
 Plug 'moll/vim-node'
-Plug 'goatslacker/mango.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'plasticboy/vim-markdown'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rhysd/vim-grammarous'
+Plug 'potatoesmaster/i3-vim-syntax'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
