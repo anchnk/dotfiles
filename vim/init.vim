@@ -25,7 +25,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-color mango
+color dracula
 
 " vim-airline settings
 let g:airline_powerline_fonts = 1
