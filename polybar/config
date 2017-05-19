@@ -1,11 +1,15 @@
 ; vim:filetype=dosini
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                               GLOBAL VARIABLES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [colors]
 ; Dracula theme palette
 background = #282a36
 current-line = #44475a
 selection = #44475a
-foreground = #f8f8f2
+foreground = #6ff8f8f2
 cyan = #8be9fd
 green = #50fa7b
 orange = #ffb86c
@@ -14,6 +18,11 @@ purple = #bd93f9
 red = #ff5555
 yellow = #f1fa8c
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                                     BARS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [bar/top]
 ; Monitors
 monitor = DP-1-1
@@ -21,7 +30,7 @@ monitor-fallback = eDP-1
 
 ; Bar dimensions
 width = 100%
-height = 40
+height = 36
 
 ; Colors
 background = ${colors.background}
@@ -30,30 +39,19 @@ foreground = ${colors.foreground}
 ; Fixed center position for modules-center
 fixed-center = true
 
-line-size = 6
-line-color = #fff
-
-
+; Underline
 underline-size = 2
-underline-color = #eee
-
-spacing = 1
-padding-left = 0
-padding-right = 0
-module-margin-left = 0
-module-margin-right = 0
+underline-color = ${colors.foreground}
 
 ; Fonts
 ;font-0 = Noto Sans:pixelsize=12;0
-font-0 = Ubuntu Mono:size=10;-1
-font-1 = FontAwesome:size=10;0
+font-0 = Ubuntu Mono:size=10;1
+font-1 = FontAwesome:pixelsize=12;2
 font-2 = siji:pixelsize=10;0
-
 
 modules-left = i3
 modules-center = xwindow
-;modules-right = battery volume mpd spotify date powermenu
-modules-right = wireless-network volume battery date powermenu
+modules-right = wireless-network volume battery date weather powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -62,69 +60,54 @@ modules-right = wireless-network volume battery date powermenu
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-; MODULES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                                   MODULES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [module/i3]
 type = internal/i3
 
 index-sort = true
-strip-wsnumbers = udoalse
-ws-icon-0 = 1: term;
-ws-icon-2 = 2: code;{}
-ws-icon-1 = 3: evolution;
+strip-wsnumbers = true
+ws-icon-0 = 1: code;
+ws-icon-1 = 2: term;
+ws-icon-2 = 3: mail;
 ;ws-icon-2 = 2: code;
 ws-icon-3 = 5: web;
 ws-icon-4 = 9: music;
-;ws-icon-2 = chat;
-;ws-icon-4 = music;
-;ws-icon-4 = web;
 ws-icon-default = 
 
-format = <label-state> <label-mode>
+padding = 3
 
+format = <label-state> <label-mode>
+;
+;focused|unfocused|visible|urgent
 label-focused = %icon%
 label-focused-foreground = ${colors.green}
 label-focused-underline = ${colors.green}
-label-focused-padding = 4
+label-focused-padding = ${self.padding}
 
 label-unfocused = %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = ${self.padding}
+
+label-visible = %icon%
+label-visible-padding = ${self.padding}
 
 label-occupied = %icon%
-label-occupied-padding = 4
+label-occupied-padding = ${self.padding}
 
 label-urgent = %icon%
-label-urgent-padding = 4
+label-urgent-padding = ${self.padding}
 
 label-empty = %icon%
 label-empty-foreground = #44ffffff
-label-empty-padding = 4
+label-empty-padding = ${self.padding}
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:120:...%
 label-padding = 4
 
-[module/date]
-type = internal/date
-
-; Seconds to sleep between updates
-interval = 1.0
-
-; See "man date" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = %a %b %d,
-
-; Optional time format
-time = %H:%M
-
-; if `date-alt` or `time-alt` is defined, clicking
-; the module will toggle between formats
-date-alt = %A, %d %B %Y
-time-alt = %H:%M:%S
-
-label = %date% %time%
-format =  <label>
-format-padding = 3
 
 [module/padding]
 type = custom/text
@@ -162,15 +145,17 @@ adapter = AC
 
 poll-interval = 5
 
-format-charging = <animation-charging><label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-format-full = <ramp-capacity><label-full>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
-format-charging-padding = 3
-format-discharging-padding = 3
-format-full-padding = 3
+
+format-charging-padding = 2
+format-discharging-padding = 2
+format-full-padding = 0
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -188,13 +173,35 @@ animation-charging-framerate = 750
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1-foreground = ${colors.red}
 
+[module/date]
+type = internal/date
+
+; Seconds to sleep between updates
+interval = 1.0
+
+; See "man date" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = %a %b %d,
+
+; Optional time format
+time = %H:%M
+
+; if `date-alt` or `time-alt` is defined, clicking
+; the module will toggle between formats
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+label = %date% %time%
+format =  <label>
+format-padding = 3
+
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume><label-volume>
+format-volume = <ramp-volume> <label-volume>%
 format-muted = <label-muted>
 label-volume = %percentage%
-label-muted = muted
+label-muted =  muted
 label-muted-foreground = #aaa
 format-volume-padding = 3
 format-muted-padding = 3
@@ -204,27 +211,25 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-headphones-0 = 
 
-[module/spotify]
+[module/weather]
 type = custom/script
-
-exec = /home/gamehelp16/Documents/np
-interval = 1
-
+interval = 10
 format = <label>
-;format-background = #dd00c6e0
-;format-foreground = #fff
-;format-padding = 4
-
-label = %output%
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+exec = ~/.config/polybar/weather
 
 [module/powermenu]
 type = custom/menu
+padding = 1
 
 label-open = 
 label-close = cancel
 label-close-foreground = #fff
-label-open-padding = 4
-label-close-padding = 3
+label-open-padding = 2
+label-close-padding = 2
+
+label-separator = |
 
 menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
@@ -232,18 +237,18 @@ menu-0-2 = power off
 menu-0-2-exec = menu-open-2
 menu-0-0 = logoff
 menu-0-0-exec = menu-open-3
-menu-0-0-padding = 3
-menu-0-1-padding = 3
-menu-0-2-padding = 3
+menu-0-0-padding = ${self.padding}
+menu-0-1-padding = ${self.padding}
+menu-0-2-padding = ${self.padding}
 
 menu-1-0 = reboot?
 menu-1-0-exec = reboot
-menu-1-0-padding = 3
+menu-1-0-padding = ${self.padding}
 
 menu-2-0 = power off?
 menu-2-0-exec = poweroff
-menu-2-0-padding = 3
+menu-2-0-padding = ${self.padding}
 
 menu-3-0 = logout ?
 menu-3-0-exec = i3-msg exit
-menu-3-0-padding = 3
+menu-3-0-padding = ${self.padding}
