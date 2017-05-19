@@ -1,6 +1,8 @@
 {
 	"i3/config": "~/.config/i3/config",
 	"polybar/config": "~/.config/polybar/config",
+  "polybar/launch.sh": "~/.config/polybar/launch.sh",
+  "polybar/weather": "~/.config/polybar/weather",
 	"sublime/Preferences.sublime-settings":
 	"~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 	"sublime/Package_Control.sublime-settings":
