@@ -18,10 +18,36 @@ purple = #bd93f9
 red = #ff5555
 yellow = #f1fa8c
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;                                     BARS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/title-top]
+
+monitor-fallback = eDP-1
+
+; Bar dimensions
+width = 100%
+height = 16
+
+; Colors
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Fixed center position for modules-center
+fixed-center = true
+
+; Underline
+underline-size = 2
+underline-color = ${colors.foreground}
+
+border-bottom-size = 1
+;border-bottom-color = #282b38
+border-bottom-color = #14151a
+
+; Fonts
+font-0 = Ubuntu Mono:size=10;2
+
+modules-center = xwindow
 
 [bar/top]
 ; Monitors
