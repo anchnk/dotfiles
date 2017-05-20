@@ -187,9 +187,9 @@ gaps inner 8
 gaps outer 0
 
 ## Workspaces
-set $ws1 "1: term"
-set $ws2 "2: code"
-set $ws3 "3: evolution"
+set $ws1 "1: code"
+set $ws2 "2: term"
+set $ws3 "3: mail"
 set $ws4 "4: net"
 set $ws5 "5: web"
 set $ws6 "6: six"
@@ -247,5 +247,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/code/bin/disable-touchpad.sh
 exec --no-startup-id /usr/bin/numlockx
 exec --no-startup-id nm-applet
-exec_always feh --bg-scale '/usr/share/backgrounds/Xerus_Wallpaper_4096x2304.png'
+#exec_always feh --bg-scale '/usr/share/backgrounds/Xerus_Wallpaper_4096x2304.png'
+exec --no-startup-id hsetroot -solid "#1d1e26"
 exec_always compton -f
