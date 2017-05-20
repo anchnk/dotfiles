@@ -49,7 +49,7 @@ font-0 = Ubuntu Mono:size=10;2
 
 modules-center = xwindow
 
-[bar/top]
+[bar/main-top]
 ; Monitors
 monitor = DP-1-1
 monitor-fallback = eDP-1
@@ -69,15 +69,23 @@ fixed-center = true
 underline-size = 2
 underline-color = ${colors.foreground}
 
+border-bottom-size = 1
+;border-bottom-color = #282b38
+border-bottom-color = #14151a
+
 ; Fonts
 ;font-0 = Noto Sans:pixelsize=12;0
 font-0 = Ubuntu Mono:size=10;1
 font-1 = FontAwesome:pixelsize=12;2
 font-2 = siji:pixelsize=10;0
 
+;modules-left = i3
+;modules-center = xwindow
+;modules-right = eth wireless-network volume battery date weather powermenu
+
 modules-left = i3
-modules-center = xwindow
-modules-right = wireless-network volume battery date weather powermenu
+modules-center = date weather
+modules-right = eth wireless-network volume battery powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -147,19 +155,28 @@ type = internal/network
 interface=wlp2s0
 
 format-connected = <label-connected>
-format-connected-padding = 2
+format-connected-padding = 0
 
 format-disconnected = <label-disconnected>
-format-disconnected-padding = 2
+format-disconnected-padding = 0
 
 label-connected =  %essid%
 label-disconnected =   None
 
-[module/wired-network]
-
+[module/eth]
 type = internal/network
 interface = enp0s31f6
+interval = 3.0
 
+format-connected-padding = 1
+format-disconnected-padding = 1
+
+format-connected-underline = ${colors.white}
+format-disconnected-underline = ${colors.gray}
+
+label-connected = 
+label-disconnected = 
+label-disconnected-foreground = ${colors.gray}
 
 [module/battery]
 type = internal/battery
