@@ -117,8 +117,10 @@ format = <label-state> <label-mode>
 ;
 ;focused|unfocused|visible|urgent
 label-focused = %icon%
-label-focused-foreground = ${colors.green}
-label-focused-underline = ${colors.green}
+;label-focused-foreground = ${colors.green}
+label-focused-foreground = ${colors.cyan}
+label-focused-background = #44475A
+label-focused-underline = ${colors.cyan}
 label-focused-padding = ${self.padding}
 
 label-unfocused = %icon%
@@ -196,8 +198,8 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
 
-format-charging-padding = 2
-format-discharging-padding = 2
+format-charging-padding = 0
+format-discharging-padding = 0
 format-full-padding = 0
 
 ramp-capacity-0 = 
@@ -236,7 +238,7 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 format =  <label>
-format-padding = 3
+format-padding = 2
 
 [module/volume]
 type = internal/volume
@@ -246,8 +248,8 @@ format-muted = <label-muted>
 label-volume = %percentage%
 label-muted =  muted
 label-muted-foreground = #aaa
-format-volume-padding = 3
-format-muted-padding = 3
+format-volume-padding = 2
+format-muted-padding = 2
 
 ramp-volume-0 = 
 ramp-volume-1 = 
