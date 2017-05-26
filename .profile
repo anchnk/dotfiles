@@ -20,13 +20,16 @@ fi
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 ################################################################################
-### --- START CUSTOM SECTION ---
+#                             START CUSTOM SECTION
 ################################################################################
 
-## Git Local Repository
-export git_local_repo="/home/tvba5179/code/git"
+## Git local repository
+export git_local_repo="$HOME/code/git"
 git_local_repo_inhouse="$git_local_repo/inhouse"
 git_local_repo_public="$git_local_repo/public"
+
+## Dotfiles repo path
+export DOTFILES="$HOME/code/git/public/anchnk/dotfiles"
 
 ## Node
 export local_nodebin="node_modules/.bin"
@@ -40,7 +43,6 @@ export NODE_DEBUG=
 ## LS configuration
 ### lsomoige
 export lsomoige="$git_local_repo_inhouse/erable/ls-omoige/"
-export lsomoige_doc="/home/tvba5179/Documents/Act/2016/Projects/Erable/omoigers/docs/exploit"
 
 ### lsomoibp
 export lsomoibp="$git_local_repo_inhouse/erable/ls-omoibp"
@@ -48,16 +50,13 @@ export lsomoibp="$git_local_repo_inhouse/erable/ls-omoibp"
 ### lsomoiac
 export lsomoiac="$git_local_repo_inhouse/erable/ls-omoiac"
 
-### RVM
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 ### Sonarlint
 # sonarlint_path="/opt/sonarlint-cli-2.0/bin"
 # export PATH="$PATH:$sonarlint_path" # Add sonartlint to PATH
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+## RVM
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change
 export PATH="$PATH:$HOME/.rvm/bin"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export DOTFILES_REPO_PATH="~/code/git/public/anchnk/dotfiles"
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
