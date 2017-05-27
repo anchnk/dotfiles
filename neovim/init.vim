@@ -1,11 +1,12 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-plug list of plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"-------------------------------------------------------------------------------
+" Plugins Install
+"-------------------------------------------------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'goatslacker/mango.vim'
 Plug 'dracula/vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -22,12 +23,9 @@ Plug 'rhysd/vim-grammarous'
 Plug 'potatoesmaster/i3-vim-syntax'
 call plug#end()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-color dracula
-
-" vim-airline settings
+"-------------------------------------------------------------------------------
+" Plugin Settings - airline
+"-------------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline_theme='dracula'
@@ -45,64 +43,90 @@ let g:airline_theme='dracula'
 "	\ '' : 'S',
 "	\ }
 
-" nerdtree Settings
+"-------------------------------------------------------------------------------
+" Plugin Settings - nerdtree
+"-------------------------------------------------------------------------------
 map <C-k><C-b> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks = 1
 
-" vim-better-whitespace settings
+"-------------------------------------------------------------------------------
+" Plugin Settings - vim-better-whitespace
+"-------------------------------------------------------------------------------
 autocmd FileType <javascript, json, jproperties, sh, vim> \
 autocmd BufEnter <buffer> EnableStripWhitespaceOnSave
 
+"-------------------------------------------------------------------------------
+" Plugin Settings - jshint2
+"-------------------------------------------------------------------------------
 " jshint2 settings
 let jshint2_read = 1
 let jshint2_save = 1
 
-" vim-javascript settings
+"-------------------------------------------------------------------------------
+" Plugin Settings - vim-javascript
+"-------------------------------------------------------------------------------
 set foldmethod=syntax
 set foldlevelstart=20
 let g:javascript_plugin_jsdoc = 1
 
-" typescript-vim
+"-------------------------------------------------------------------------------
+" Plugin Settings - typescript-vim
+"-------------------------------------------------------------------------------
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" editorconfig
+"-------------------------------------------------------------------------------
+" Plugin Settings - editorconfig-vim
+"-------------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 
+"-------------------------------------------------------------------------------
+" Plugin Settings - vim-markdown
+"-------------------------------------------------------------------------------
 let g:vim_markdown_conceal = 0
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Global Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set background=dark
-set colorcolumn=80 " 80 character column delimiter
-set encoding=utf-8
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
-set number
-set numberwidth=4
-set shiftwidth=2
-set tabstop=2
-set tabline=2
-set title " Show file title in terminal tab
-set relativenumber
-autocmd FileType markdown set textwidth=80
-autocmd FileType gitcommit set textwidth=72
 
-" Colors
-set termguicolors
-
+"-------------------------------------------------------------------------------
+" Options - Behaviour
+"-------------------------------------------------------------------------------
 " Highights
 "highlight Search term=bold cterm=bold ctermfg=Red ctermbg=NONE
 "highlight NonText ctermfg=5
 "hi Normal guibg=NONE ctermbg=NONE
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"-------------------------------------------------------------------------------
+" Options - Appearance
+"-------------------------------------------------------------------------------
+set termguicolors
+set background=dark
+colorscheme dracula
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+set number          " Show line numbers
+set numberwidth=6   " Number of columns to use for line number
+set colorcolumn=80  " 80 character column delimiter
+set relativenumber
+
+set encoding=utf-8
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
+set title           " Show file title in terminal tab
+
+"-------------------------------------------------------------------------------
+" Options - Idents and Tabs
+"-------------------------------------------------------------------------------
+set expandtab       " Replace tabs with spaces in Insert mode.
+set tabstop=2       " Spaces that a <Tab> in file counts for.
+set shiftwidth=2    " Spaces for each (auto)indent.
+
+" Ident and tab options for specific file types.
+autocmd FileType markdown set textwidth=80
+autocmd FileType gitcommit set textwidth=72
+
+"-------------------------------------------------------------------------------
+" Mappings - General
+"-------------------------------------------------------------------------------
 " Disable Arrow Keys in all modes
 noremap  <Up> ""
-noremap! <Up> <Esc>
+"noremap! <Up> <Esc>
 noremap  <Down> ""
 noremap! <Down> <Esc>
 noremap  <Left> ""
