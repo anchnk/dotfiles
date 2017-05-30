@@ -23,6 +23,10 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 #                             START CUSTOM SECTION
 ################################################################################
 
+# corporate proxy
+http_proxy=http://127.0.0.1:3128
+https_proxy=https://127.0.0.1:3128
+
 ## Git local repository
 export git_local_repo="$HOME/code/git"
 git_local_repo_inhouse="$git_local_repo/inhouse"
@@ -38,7 +42,7 @@ export local_nodebin="node_modules/.bin"
 export NODE_ENV="test"
 export LOG="true"
 export ERABLE_SERVICE="erable"
-export NODE_DEBUG=
+export NODE_DEBUG=""
 
 ## LS configuration
 ### lsomoige
@@ -53,6 +57,11 @@ export lsomoiac="$git_local_repo_inhouse/erable/ls-omoiac"
 ### Sonarlint
 # sonarlint_path="/opt/sonarlint-cli-2.0/bin"
 # export PATH="$PATH:$sonarlint_path" # Add sonartlint to PATH
+
+export NVM_DIR="$HOME/code/git/public/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 ## RVM
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change
