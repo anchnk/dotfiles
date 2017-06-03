@@ -12,7 +12,8 @@ Xft.rgba:       rgb
 ! ------------------------------------------------------------------------------
 ! ROFI
 ! ------------------------------------------------------------------------------
-rofi.font:              Hack regular 11
+rofi.font:              SauceCodePro NF Regular 11
+!rofi.font:              Hack regular 11
 rofi.fullscreen:        true
 rofi.lines:             6
 rofi.line-margin:       10
