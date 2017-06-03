@@ -1,13 +1,28 @@
 # dotfiles
 
-This repository is still work in progress.
+My personal dotfiles.
 
-More to come in the upcoming days.
+note: this repository holds personal settings and will evolve with my journey as
+a developer. It will stay experimental and will be an evolving work in progress.
+
+This repository holds dotfiles necessary to set up a new linux dev machine.
+Applying this configuration requires the following programs:
+
+- i3
+- neovim
+- polybar
+- rofi
+- sublime text
+
+## Files
 
 - **[`.bashrc`](.bashrc)**: bash's .bashrc
 - **[`.gitconfig`](.gitconfig)**: git user configuration
 - **[`.profile`](.profile)**: bash .profile
 - **[`.Xresources`](.Xresources)**: X server's configuration
+
+## Folders
+
 - **[`i3/config`](i3/config)**: i3's configuration
 - **[`neovim/init.vim`](neovim/init.vim)**: neovim's configuration
 - **[`polybar/config`](polybar\config)**: polybar's configuration
