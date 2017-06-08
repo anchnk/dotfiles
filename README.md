@@ -20,6 +20,7 @@ Applying this configuration requires the following programs:
 - **[`.gitconfig`](.gitconfig)**: git user configuration
 - **[`.profile`](.profile)**: bash .profile
 - **[`.Xresources`](.Xresources)**: X server's configuration
+- **[`.xmodmap-esc`](.xmodmap-esc)**: custom console key bindings
 
 ## Folders
 
