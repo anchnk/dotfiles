@@ -250,12 +250,14 @@ for_window [class="Ubuntu-tweak"] floating enable
 workspace_auto_back_and_forth yes
 
 ## Startup applications
+exec --no-startup-id /usr/bin/numlockx
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id hsetroot -solid "#1d1e26"
+#exec_always feh --bg-scale '/usr/share/backgrounds/Xerus_Wallpaper_4096x2304.png'
+
 exec_always --no-startup-id $HOME/.screenlayout/office-docked.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/code/bin/disable-touchpad.sh
-exec --no-startup-id /usr/bin/numlockx
-exec --no-startup-id nm-applet
-#exec_always feh --bg-scale '/usr/share/backgrounds/Xerus_Wallpaper_4096x2304.png'
-#exec_always --no-startup-id hsetroot -solid "#5D676C"
-exec --no-startup-id hsetroot -solid "#1d1e26"
+exec_always --no-startup-id $HOME/code/bin/remap-esc-to-capslock.sh
 exec_always compton -f
