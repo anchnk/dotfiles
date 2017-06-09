@@ -239,6 +239,17 @@ format-padding = 2
 [module/volume]
 type = internal/volume
 
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+;master-mixer = Master
+;speaker-mixer = Headphone
+;headphone-mixer = Headphone
+;headphone-id = 16
+
+mapping = true
+
 format-volume = <ramp-volume> <label-volume>%
 format-muted = <label-muted>
 label-volume = %percentage%
@@ -248,6 +259,7 @@ format-volume-padding = 2
 format-muted-padding = 2
 
 ramp-volume-0 = 
+;ramp-volume-0 = 🔇
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-headphones-0 = 
