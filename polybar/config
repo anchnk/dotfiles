@@ -297,11 +297,14 @@ menu-0-2-padding = ${self.padding}
 menu-1-0 = reboot ?
 menu-1-0-exec = reboot
 menu-1-0-padding = ${self.padding}
+menu-1-0-foreground = $3colors.cyan}
 
 menu-2-0 = power off ?
 menu-2-0-exec = poweroff
 menu-2-0-padding = ${self.padding}
+menu-2-0-foreground = ${colors.cyan}
 
 menu-3-0 = logout ?
 menu-3-0-exec = i3-msg exit
 menu-3-0-padding = ${self.padding}
+menu-3-0-foreground = ${colors.cyan}
