@@ -170,12 +170,12 @@ interval = 3.0
 format-connected-padding = 1
 format-disconnected-padding = 1
 
-format-connected-underline = ${colors.white}
-format-disconnected-underline = ${colors.gray}
+format-connected-underline = ${colors.cyan}
+;format-disconnected-underline = ${colors.gray}
 
 label-connected = 
 label-disconnected = 
-label-disconnected-foreground = ${colors.gray}
+label-disconnected-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
