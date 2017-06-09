@@ -288,17 +288,17 @@ menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
 menu-0-2 = power off
 menu-0-2-exec = menu-open-2
-menu-0-0 = logoff
+menu-0-0 = logout
 menu-0-0-exec = menu-open-3
 menu-0-0-padding = ${self.padding}
 menu-0-1-padding = ${self.padding}
 menu-0-2-padding = ${self.padding}
 
-menu-1-0 = reboot?
+menu-1-0 = reboot ?
 menu-1-0-exec = reboot
 menu-1-0-padding = ${self.padding}
 
-menu-2-0 = power off?
+menu-2-0 = power off ?
 menu-2-0-exec = poweroff
 menu-2-0-padding = ${self.padding}
 
