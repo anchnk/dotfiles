@@ -90,6 +90,7 @@ if !exists("$COLORTERM") && $TERM ==# 'xterm-256color'
 endif
 set background=dark
 colorscheme dracula
+hi CursorLineNr term=bold ctermbg=NONE guibg=NONE cterm=bold gui=bold
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 set number          " Show line numbers
 set numberwidth=6   " Number of columns to use for line number
