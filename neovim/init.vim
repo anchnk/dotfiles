@@ -30,6 +30,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dracula'
+
 "-------------------------------------------------------------------------------
 " Plugin Settings - nerdtree
 "-------------------------------------------------------------------------------
@@ -91,7 +92,7 @@ set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 set number          " Show line numbers
 set numberwidth=6   " Number of columns to use for line number
 set colorcolumn=80  " 80 character column delimiter
-set relativenumber
+set relativenumber  " Show relative line numbers
 
 set encoding=utf-8
 set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
