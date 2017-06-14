@@ -85,7 +85,9 @@ let g:vim_markdown_conceal = 0
 "-------------------------------------------------------------------------------
 " Options - Appearance
 "-------------------------------------------------------------------------------
-set termguicolors
+if !exists("$COLORTERM") && $TERM ==# 'xterm-256color'
+  set termguicolors
+endif
 set background=dark
 colorscheme dracula
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
