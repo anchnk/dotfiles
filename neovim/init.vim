@@ -54,7 +54,7 @@ let jshint2_save = 1
 " Plugin Settings - vim-javascript
 "-------------------------------------------------------------------------------
 set foldmethod=syntax
-set foldlevelstart=20
+set foldlevel=20
 let g:javascript_plugin_jsdoc = 1
 
 "-------------------------------------------------------------------------------
