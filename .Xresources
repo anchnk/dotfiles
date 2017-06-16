@@ -10,6 +10,22 @@ Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
 ! ------------------------------------------------------------------------------
+! Color Scheme
+! ------------------------------------------------------------------------------
+#define DRACULA_Background  #282a36
+#define DRACULA_Foreground  #f8f8f2
+#define DRACULA_Purple      #bd93f9
+#define DRACULA_Pink        #ff79c6
+#define DRACULA_Red         #ff5555
+#define DRACULA_Green       #50fa7b
+#define DRACULA_Yellow      #f1fa8c
+#define DRACULA_Cyan        #8be9fd
+!#define
+!#define
+!#define
+!#define
+
+! ------------------------------------------------------------------------------
 ! URxvt
 ! ------------------------------------------------------------------------------
 URxvt.font:             xft:SauceCodePro NF:style=Regular
@@ -19,31 +35,30 @@ URxvt*transparent:      true
 URxvt.depth:            32
 URxvt.shading:          30
 URxvt.background:       rgba:3333/3333/3333/e3e3
-!URxvt.inheritPixmap:    true
 URxvt.internalBorder:   15
 URxvt.letterSpace:      -2
 URxvt.scrollBar:        false
 URxvt.scrollBar_right:  false
+URxvt*cursorBlink:      true
+URxvt.cursorColor:      DRACULA_Pink
+URxvt.cursorColor2:     #44475a
 *.antialias:            true
 *.autohint:             true
-URxvt*cursorBlink:      true
-URxvt.cursorColor:      #ff79c6
-URxvt.cursorColor2:     #000000
-*.foreground:           #F8F8F2
-*.background:           #282A36
+*.foreground:           DRACULA_Foreground
+*.background:           DRACULA_Background
 *.color0:               #000000
 *.color8:               #4D4D4D
-*.color1:               #FF5555
+*.color1:               DRACULA_Red
 *.color9:               #FF6E67
-*.color2:               #50FA7B
+*.color2:               DRACULA_Green
 *.color10:              #5AF78E
-*.color3:               #F1FA8C
+*.color3:               DRACULA_Yellow
 *.color11:              #F4F99D
-*.color4:               #BD93F9
+*.color4:               DRACULA_Purple
 *.color12:              #CAA9FA
-*.color5:               #FF79C6
+*.color5:               DRACULA_Pink
 *.color13:              #FF92D0
-*.color6:               #8BE9FD
+*.color6:               DRACULA_Cyan
 *.color14:              #9AEDFE
 *.color7:               #BFBFBF
 *.color15:              #E6E6E6
