@@ -6,7 +6,9 @@
 
 [colors]
 ; Dracula theme palette
-background = #282a36
+;background = #00282a36
+background = #af0b0e13
+;background = #282a36
 current-line = #44475a
 selection = #44475a
 foreground = #6ff8f8f2
@@ -76,8 +78,8 @@ border-bottom-color = #14151a
 
 ; Fonts
 ;font-0 = Noto Sans:pixelsize=12;0
-font-0 = Ubuntu Mono:size=10;2
-font-1 = FontAwesome:pixelsize=12;3
+font-0 = Ubuntu Mono:size=10;3
+font-1 = FontAwesome:pixelsize=12;4
 font-2 = siji:pixelsize=10;0
 
 modules-left = i3
