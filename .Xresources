@@ -20,10 +20,6 @@ Xft.rgba:       rgb
 #define DRACULA_Green       #50fa7b
 #define DRACULA_Yellow      #f1fa8c
 #define DRACULA_Cyan        #8be9fd
-!#define
-!#define
-!#define
-!#define
 
 ! ------------------------------------------------------------------------------
 ! URxvt
