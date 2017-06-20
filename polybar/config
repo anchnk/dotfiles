@@ -6,8 +6,8 @@
 
 [colors]
 ; Dracula theme palette
-;background = #00282a36
 background = #af0b0e13
+;background = #2F343F
 ;background = #282a36
 current-line = #44475a
 selection = #44475a
@@ -20,6 +20,10 @@ purple = #bd93f9
 red = #ff5555
 yellow = #f1fa8c
 
+; Arc theme palette
+[arc-colors]
+background = #383C4A
+borders = #252a33
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;                                     BARS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -33,7 +37,6 @@ height = 18
 
 ; Colors
 background = ${colors.background}
-;background = #15161f
 foreground = ${colors.foreground}
 
 ; Fixed center position for modules-center
@@ -73,7 +76,6 @@ underline-size = 2
 underline-color = ${colors.foreground}
 
 border-bottom-size = 1
-;border-bottom-color = #282b38
 border-bottom-color = #14151a
 
 ; Fonts
