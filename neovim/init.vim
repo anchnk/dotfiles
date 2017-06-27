@@ -124,3 +124,9 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+let mapleader = ','
+noremap <Leader>l :! hxvw <cword><cr><cr>
+nnoremap <C-L> :noh<cr>
+nnoremap <C-s> :w!<cr>
+nnoremap <C-q> :wq!<cr>
