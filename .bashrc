@@ -133,9 +133,5 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# Corporate Proxy Settings
-#http_proxy=http://127.0.0.1:3128
-#https_proxy=$http_proxy
-
 # SSH Hosts
 # . /etc/bash_completion.d/ssh
