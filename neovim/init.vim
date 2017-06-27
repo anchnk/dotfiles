@@ -85,7 +85,7 @@ let g:vim_markdown_conceal = 0
 "-------------------------------------------------------------------------------
 " Options - Appearance
 "-------------------------------------------------------------------------------
-if !exists("$COLORTERM") && $TERM ==# 'xterm-256color'
+if !exists("$COLORTERM") && $TERM ==# 'xterm-256color' || $TERM ==# 'screen'
   set termguicolors
 endif
 set background=dark
