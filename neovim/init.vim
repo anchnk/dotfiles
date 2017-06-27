@@ -91,6 +91,7 @@ endif
 set background=dark
 colorscheme dracula
 hi CursorLineNr term=bold ctermbg=NONE guibg=NONE cterm=bold gui=bold
+hi Normal guibg=#1D1E26
 set guifont=SauceCodePro\ NF\ 11
 "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 set number          " Show line numbers
