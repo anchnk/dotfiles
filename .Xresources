@@ -10,7 +10,7 @@ Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
 ! ------------------------------------------------------------------------------
-! Color Scheme
+!
 ! ------------------------------------------------------------------------------
 #define DRACULA_Background  #282a36
 #define DRACULA_Foreground  #f8f8f2
