@@ -38,6 +38,9 @@ URxvt.scrollBar_right:  false
 URxvt*cursorBlink:      true
 URxvt.cursorColor:      DRACULA_Pink
 URxvt.cursorColor2:     #44475a
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+
 *.antialias:            true
 *.autohint:             true
 *.foreground:           DRACULA_Foreground
