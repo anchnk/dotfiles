@@ -92,6 +92,7 @@ set background=dark
 colorscheme dracula
 hi CursorLineNr term=bold ctermbg=NONE guibg=NONE cterm=bold gui=bold
 set guifont=SauceCodePro\ NF\ 11
+hi Normal guibg=#1D1E26
 set number          " Show line numbers
 set numberwidth=6   " Number of columns to use for line number
 set colorcolumn=80  " 80 character column delimiter
