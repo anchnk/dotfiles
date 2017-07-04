@@ -118,7 +118,7 @@ mode "resize" {
 # Pressing right will grow the window’s width.
 # Pressing up will shrink the window’s height.
 # Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
+    bindsym j resize shrink width 10 px or 10 ppt
     bindsym k resize grow height 10 px or 10 ppt
     bindsym l resize shrink height 10 px or 10 ppt
     bindsym m resize grow width 10 px or 10 ppt
@@ -151,14 +151,14 @@ set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-  bindsym o      mode "$mode_gaps_outer"
+    bindsym o      mode "$mode_gaps_outer"
     bindsym i      mode "$mode_gaps_inner"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 mode "$mode_gaps_inner" {
-  bindsym plus  gaps inner current plus 5
+    bindsym plus  gaps inner current plus 5
     bindsym minus gaps inner current minus 5
     bindsym 0     gaps inner current set 0
 
@@ -170,7 +170,7 @@ mode "$mode_gaps_inner" {
     bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-  bindsym plus  gaps outer current plus 5
+    bindsym plus  gaps outer current plus 5
     bindsym minus gaps outer current minus 5
     bindsym 0     gaps outer current set 0
 
