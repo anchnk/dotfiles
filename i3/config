@@ -265,7 +265,8 @@ exec --no-startup-id /usr/bin/numlockx
 exec --no-startup-id nm-applet
 exec --no-startup-id dunst
 
-exec_always --no-startup-id $HOME/.screenlayout/office-docked.sh
+#exec_always --no-startup-id $HOME/.screenlayout/office-docked.sh
+exec_always --no-startup-id $HOME/.screenlayout/office-large-dual.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/bin/disable-touchpad.sh
 exec_always --no-startup-id $HOME/bin/remap-esc-to-capslock.sh
