@@ -110,6 +110,10 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 # Nautilus
 bindsym $mod+n exec nautilus --no-desktop --new-window
 
+# Screen lock
+# TODO : use the i3lock fork with clock as soon as multi-screen support is added
+bindsym $mod+esc exec i3lock
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
