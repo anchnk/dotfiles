@@ -21,6 +21,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-grammarous'
 Plug 'potatoesmaster/i3-vim-syntax'
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
 
 "-------------------------------------------------------------------------------
