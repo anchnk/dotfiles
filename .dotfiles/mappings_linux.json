@@ -14,5 +14,6 @@
   "dunstrc": "~/.config/dunst/dunstrc",
   "tmux.conf": "~/.tmux.conf",
   ".gitconfig": "~/.gitconfig",
-  ".xmodmap-esc": "~/.xmodmap-esc"
+  ".xmodmap-esc": "~/.xmodmap-esc",
+  "profile": "~/.profile"
 }
