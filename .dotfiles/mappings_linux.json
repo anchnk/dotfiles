@@ -12,6 +12,7 @@
   "neovim/init.vim": "~/.config/nvim/init.vim",
   "compton.conf": "~/.config/compton.conf",
   "dunstrc": "~/.config/dunst/dunstrc",
+  "tmux.conf": "~/.tmux.conf",
   ".gitconfig": "~/.gitconfig",
   ".xmodmap-esc": "~/.xmodmap-esc"
 }
