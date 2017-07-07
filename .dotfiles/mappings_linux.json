@@ -10,10 +10,12 @@
   "sublime/Package_Control.sublime-settings":
   "~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
   "neovim/init.vim": "~/.config/nvim/init.vim",
+  "bash_profile": "~/.bash_profile",
   "compton.conf": "~/.config/compton.conf",
   "dunstrc": "~/.config/dunst/dunstrc",
   "tmux.conf": "~/.tmux.conf",
   ".gitconfig": "~/.gitconfig",
   ".xmodmap-esc": "~/.xmodmap-esc",
-  "profile": "~/.profile"
+  "profile": "~/.profile",
+  "Xresources": "~/.Xresources"
 }
