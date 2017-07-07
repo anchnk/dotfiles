@@ -99,7 +99,7 @@ set colorcolumn=80  " 80 character column delimiter
 set relativenumber  " Show relative line numbers
 
 set encoding=utf-8
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_,space:.
+set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
 set title           " Show file title in terminal tab
 
 "-------------------------------------------------------------------------------
