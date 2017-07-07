@@ -196,11 +196,11 @@ client.unfocused        #1d1e26    #282A36    #F8F8F2    #2e9ef4    #282A36
 client.focused_inactive #1d1e26    #282A36    #F8F8F2    #2e9ef4    #282A36
 
 ## Workspaces
-set $ws1 "1: code"
+set $ws1 "1: web"
 set $ws2 "2: term"
 set $ws3 "3: mail"
-set $ws4 "4: net"
-set $ws5 "5: web"
+set $ws4 "4: four"
+set $ws5 "5: code"
 set $ws6 "6: six"
 set $ws7 "7: seven"
 set $ws8 "8: slack"
@@ -241,7 +241,7 @@ bindsym $mod+Shift+ccedilla move container to workspace $ws9
 
 ### workspaces assignment
 assign [class="Evolution"] $ws3
-assign [class="Firefox"] $ws5
+assign [class="Firefox"] $ws1
 assign [class="Spotify"] $ws9
 assign [class="Slack"] $ws8
 
