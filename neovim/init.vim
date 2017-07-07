@@ -86,9 +86,11 @@ let g:vim_markdown_conceal = 0
 "-------------------------------------------------------------------------------
 " Options - Appearance
 "-------------------------------------------------------------------------------
-if !exists("$COLORTERM") && $TERM ==# 'xterm-256color' || $TERM ==# 'screen'
-  set termguicolors
-endif
+
+"if !exists("$COLORTERM") && $TERM ==# 'xterm-256color' || $TERM ==# 'screen'
+  "set termguicolors
+"endif
+
 set background=dark
 colorscheme dracula
 hi CursorLineNr term=bold ctermbg=NONE guibg=NONE cterm=bold gui=bold
