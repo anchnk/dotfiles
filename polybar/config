@@ -104,11 +104,10 @@ type = internal/i3
 
 index-sort = true
 strip-wsnumbers = true
-ws-icon-0 = 1: code;
+ws-icon-0 = 1: web;
 ws-icon-1 = 2: term;
 ws-icon-2 = 3: mail;
-;ws-icon-2 = 2: code;
-ws-icon-3 = 5: web;
+ws-icon-3 = 5: code;
 ws-icon-4 = 8: slack;
 ws-icon-5 = 9: music;
 ws-icon-default = 
