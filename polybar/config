@@ -112,7 +112,7 @@ ws-icon-4 = 8: slack;
 ws-icon-5 = 9: music;
 ws-icon-default = 
 
-padding = 3
+padding = 2
 
 format = <label-state> <label-mode>
 ;
@@ -120,7 +120,7 @@ format = <label-state> <label-mode>
 label-focused = %icon%
 ;label-focused-foreground = ${colors.green}
 label-focused-foreground = ${colors.cyan}
-label-focused-background = #44475A
+;label-focused-background = #44475A
 label-focused-underline = ${colors.cyan}
 label-focused-padding = ${self.padding}
 
