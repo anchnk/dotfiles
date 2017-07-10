@@ -114,18 +114,16 @@ autocmd FileType gitcommit set textwidth=72
 "-------------------------------------------------------------------------------
 " Mappings - General
 "-------------------------------------------------------------------------------
-" Disable Arrow Keys in all modes
-noremap  <Up> ""
-"noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
 
-let mapleader = ','
-noremap <Leader>l :! hxvw <cword><cr><cr>
+let mapleader = ',' " set custom leader char
+
+" Disable Arrow Keys in normal mode
+nnoremap <Up>    ""
+nnoremap <Down>  ""
+nnoremap <Left>  ""
+nnoremap <Right> ""
+
 nnoremap <C-L> :noh<cr>
 nnoremap <C-s> :w!<cr>
 nnoremap <C-q> :wq!<cr>
+noremap  <Leader>l :! hxvw <cword><cr><cr>
