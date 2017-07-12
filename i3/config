@@ -191,7 +191,7 @@ mode "$mode_gaps_outer" {
 ## Gaps
 ### General
 gaps inner 10
-gaps outer 20
+gaps outer 30
 
 ## Colors
 # class                 border     backgr.    text       indicator  child_border
