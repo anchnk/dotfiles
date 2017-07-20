@@ -10,6 +10,7 @@
   "polybar/launch.sh": "~/.config/polybar/launch.sh",
   "polybar/weather": "~/.config/polybar/weather",
 
+  "screenlayout/home-single.sh": "~/.screenlayout/home-single.sh",
   "screenlayout/office-docked.sh": "~/.screenlayout/office-docked.sh",
   "screenlayout/office-large-dual.sh": "~/.screenlayout/office-large-dual.sh",
 
