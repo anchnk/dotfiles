@@ -34,7 +34,7 @@ git_local_repo_public="$git_local_repo/public"
 
 ## Dotfiles repo path
 export DOTFILES="$HOME/code/git/public/anchnk/dotfiles"
-
+export DOTBIN="$HOME/code/git/public/anchnk/dotbin"
 ## Node
 export local_nodebin="node_modules/.bin"
 
