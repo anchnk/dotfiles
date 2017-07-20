@@ -36,6 +36,7 @@ let g:airline_theme='dracula'
 "-------------------------------------------------------------------------------
 " Plugin Settings - nerdtree
 "-------------------------------------------------------------------------------
+let mapleader = ',' " set custom leader char
 map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks = 1
 
@@ -116,7 +117,6 @@ autocmd FileType gitcommit set textwidth=72
 " Mappings - General
 "-------------------------------------------------------------------------------
 
-let mapleader = ',' " set custom leader char
 
 " Disable Arrow Keys in normal mode
 nnoremap <Up>    ""
