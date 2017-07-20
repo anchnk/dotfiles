@@ -278,5 +278,4 @@ exec_always --no-startup-id $HOME/bin/remap-esc-to-capslock.sh
 exec_always --no-startup-id $HOME/bin/monitors-setup.sh
 exec_always --no-startup-id $HOME/bin/bg-multi-screen.sh
 exec_always --no-startup-id $HOME/bin/launch-polybar.sh
-exec_always --no-startup-id $HOME/bin/launch-dunst.sh
 exec_always compton -f
