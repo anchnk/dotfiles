@@ -23,6 +23,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-grammarous'
 Plug 'potatoesmaster/i3-vim-syntax'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'alpertuna/vim-header'
 call plug#end()
 
 "-------------------------------------------------------------------------------
@@ -76,6 +77,13 @@ let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 " Plugin Settings - vim-markdown
 "-------------------------------------------------------------------------------
 let g:vim_markdown_conceal = 0
+
+"-------------------------------------------------------------------------------
+" Plugin Settings - vim-header
+"-------------------------------------------------------------------------------
+let g:header_auto_add_header = 0
+let g:header_field_author = 'anchnk'
+let g:header_field_author_email = 'anachronikgmail{dot}com'
 
 "-------------------------------------------------------------------------------
 " Options - Behaviour
