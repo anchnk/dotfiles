@@ -101,7 +101,7 @@
 
   # Text {{{
 
-    font = lime
+    font = tewi
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
