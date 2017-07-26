@@ -24,38 +24,12 @@ yellow = #f1fa8c
 [arc-colors]
 background = #383C4A
 borders = #252a33
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;                                     BARS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[bar/title-top]
-monitor = DP-1-1
-monitor-fallback = eDP-1
 
-; Bar dimensions
-width = 100%
-height = 18
-
-; Colors
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-; Fixed center position for modules-center
-fixed-center = true
-
-; Underline
-underline-size = 2
-underline-color = ${colors.foreground}
-
-border-bottom-size = 1
-;border-bottom-color = #282b38
-border-bottom-color = #14151a
-
-; Fonts
-font-0 = Ubuntu Mono:size=10;2
-
-modules-center = xwindow
-
-[bar/main-top]
+[bar/bottom]
 ; Monitors
 monitor = DP-1-1
 monitor-fallback = eDP-1
@@ -144,10 +118,6 @@ label-empty = %icon%
 label-empty-foreground = #44ffffff
 label-empty-padding = ${self.padding}
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:120:...%
-label-padding = 4
 
 
 [module/padding]
