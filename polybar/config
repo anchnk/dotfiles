@@ -4,7 +4,7 @@
 ;                               GLOBAL VARIABLES
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[colors]
+[dracula-colors]
 ; Dracula theme palette
 background = #af0b0e13
 ;background = #2F343F
@@ -68,8 +68,8 @@ height = 36
 bottom = true
 
 ; Colors
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${dracula-colors.background}
+foreground = ${dracula-colors.foreground}
 
 ; Fixed center position for modules-center
 fixed-center = true
@@ -121,10 +121,11 @@ format = <label-state> <label-mode>
 ;
 ;focused|unfocused|visible|urgent
 label-focused = %icon%
-;label-focused-foreground = ${colors.green}
-label-focused-foreground = ${colors.cyan}
+;label-focused-foreground = ${dracula-colors.green}
+label-focused-foreground = ${dracula-colors.cyan}
 ;label-focused-background = #44475A
-label-focused-underline = ${colors.cyan}
+label-focused-overline = ${dracula-colors.cyan}
+;label-focused-underline = ${dracula-colors.cyan}
 label-focused-padding = ${self.padding}
 
 label-unfocused = %icon%
@@ -177,12 +178,12 @@ interval = 3.0
 format-connected-padding = 1
 format-disconnected-padding = 1
 
-format-connected-underline = ${colors.cyan}
-;format-disconnected-underline = ${colors.gray}
+format-connected-underline = ${dracula-colors.cyan}
+;format-disconnected-underline = ${dracula-colors.gray}
 
 label-connected = 
 label-disconnected = 
-label-disconnected-foreground = ${colors.foreground}
+label-disconnected-foreground = ${dracula-colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -219,7 +220,7 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-0-foreground = ${dracula-colors.red}
 
 [module/date]
 type = internal/date
@@ -276,7 +277,7 @@ type = custom/script
 interval = 10
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${dracula-colors.foreground}
 exec = ~/.config/polybar/weather
 
 [module/powermenu]
@@ -304,14 +305,14 @@ menu-0-2-padding = ${self.padding}
 menu-1-0 = reboot ?
 menu-1-0-exec = reboot
 menu-1-0-padding = ${self.padding}
-menu-1-0-foreground = ${colors.cyan}
+menu-1-0-foreground = ${dracula-colors.cyan}
 
 menu-2-0 = power off ?
 menu-2-0-exec = poweroff
 menu-2-0-padding = ${self.padding}
-menu-2-0-foreground = ${colors.cyan}
+menu-2-0-foreground = ${dracula-colors.cyan}
 
 menu-3-0 = logout ?
 menu-3-0-exec = i3-msg exit
 menu-3-0-padding = ${self.padding}
-menu-3-0-foreground = ${colors.cyan}
+menu-3-0-foreground = ${dracula-colors.cyan}
