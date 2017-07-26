@@ -49,11 +49,15 @@ foreground = ${dracula-colors.foreground}
 fixed-center = true
 
 ; Underline
-underline-size = 2
-underline-color = ${colors.foreground}
+;underline-size = 2
+;underline-color = ${dracula-colors.foreground}
 
-border-bottom-size = 1
-border-bottom-color = #14151a
+overline-size = 1
+overline-color = ${dracula-colors.foreground}
+
+border-top-size = 0
+border-bottom-size = 0
+;border-bottom-color = #14151a
 
 ; Fonts
 ;font-0 = Noto Sans:pixelsize=12;0
