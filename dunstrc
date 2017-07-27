@@ -1,5 +1,3 @@
-# vim: ft=cfg:fdm=marker
-
 ################################################################################
 #
 #    ██████╗   ██╗   ██╗  ███╗   ██╗  ███████╗  ████████╗  ██████╗    ██████╗
@@ -13,7 +11,7 @@
 #    Date: 24.07.2017
 #    Dunst: v1.2.0
 #    File: dunstrc
-#    Last Modified Date: 24.07.2017
+#    Last Modified Date: 27.07.2017
 #    Last Modified By: anchnk
 #    Location: $HOME/.config/dunst/dunstrc
 #
@@ -314,3 +312,5 @@
 #    appname = Pidgin
 #    summary = *twitter.com*
 #    urgency = normal
+
+# vim: ft=cfg:fdm=marker
