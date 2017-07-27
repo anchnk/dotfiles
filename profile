@@ -57,4 +57,3 @@ export lsomoiac="$git_local_repo_inhouse/erable/ls-omoiac"
 ### Sonarlint
 # sonarlint_path="/opt/sonarlint-cli-2.0/bin"
 # export PATH="$PATH:$sonarlint_path" # Add sonartlint to PATH
-
