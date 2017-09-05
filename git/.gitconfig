@@ -22,7 +22,7 @@
 	oldNormal = "red bold"
 [core]
 	# autocrlf = true
-	editor = nvim
+	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	# Don't consider trailing space as a cause for merge conflicts
 	whitespace = -trailing-space
