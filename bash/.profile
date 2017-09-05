@@ -24,9 +24,9 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 ################################################################################
 
 ## Git local repository
-export git_local_repo="$HOME/code/"
-inhouse_repos="$git_local_repo/inhouse"
-public_repos="$git_local_repo/public"
+export git_local_repo="$HOME/code"
+export inhouse_repos="$git_local_repo/inhouse"
+export public_repos="$git_local_repo/public"
 
 ## Dotfiles repo path
 export dotfiles="$public_repos/anchnk/dotfiles"
