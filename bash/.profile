@@ -30,7 +30,7 @@ public_repos="$git_local_repo/public"
 
 ## Dotfiles repo path
 export dotfiles="$public_repos/anchnk/dotfiles"
-export dotbin="$public_repos/anchnk/bin"
+export bin="$public_repos/anchnk/bin"
 
 ## Node
 export local_nodebin="node_modules/.bin"
