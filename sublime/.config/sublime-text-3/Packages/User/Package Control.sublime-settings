@@ -1,6 +1,5 @@
 {
 	"bootstrapped": true,
-	"http_proxy": "http://localhost:3128",
 	"in_process_packages":
 	[
 	],
