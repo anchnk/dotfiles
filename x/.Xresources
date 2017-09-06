@@ -1,0 +1,91 @@
+! ------------------------------------------------------------------------------
+! Xft
+! ------------------------------------------------------------------------------
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.autohint:   true
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+! ------------------------------------------------------------------------------
+!
+! ------------------------------------------------------------------------------
+#define DRACULA_Background  #282a36
+#define DRACULA_Foreground  #f8f8f2
+#define DRACULA_Purple      #bd93f9
+#define DRACULA_Pink        #ff79c6
+#define DRACULA_Red         #ff5555
+#define DRACULA_Green       #50fa7b
+#define DRACULA_Yellow      #f1fa8c
+#define DRACULA_Cyan        #8be9fd
+
+! ------------------------------------------------------------------------------
+! URxvt
+! ------------------------------------------------------------------------------
+URxvt.font:             xft:SauceCodePro Nerd Font:style=Regular
+URxvt*boldFont:         xft:SauceCodePro Nerd Font:style=Bold
+URxvt*cursorUnderline:  true
+URxvt*transparent:      true
+URxvt.depth:            32
+URxvt.shading:          30
+URxvt.background:       rgba:3333/3333/3333/e3e3
+URxvt.internalBorder:   15
+URxvt.letterSpace:      -2
+URxvt.scrollBar:        false
+URxvt.scrollBar_right:  false
+URxvt*cursorBlink:      true
+URxvt.cursorColor:      DRACULA_Pink
+URxvt.cursorColor2:     #44475a
+URxvt.loginShell:       true
+URxvt.iso14755:         false
+URxvt.iso14755_52:      false
+
+*.antialias:            true
+*.autohint:             true
+*.foreground:           DRACULA_Foreground
+*.background:           DRACULA_Background
+*.color0:               #000000
+*.color8:               #4D4D4D
+*.color1:               DRACULA_Red
+*.color9:               #FF6E67
+*.color2:               DRACULA_Green
+*.color10:              #5AF78E
+*.color3:               DRACULA_Yellow
+*.color11:              #F4F99D
+*.color4:               DRACULA_Purple
+*.color12:              #CAA9FA
+*.color5:               DRACULA_Pink
+*.color13:              #FF92D0
+*.color6:               DRACULA_Cyan
+*.color14:              #9AEDFE
+*.color7:               #BFBFBF
+*.color15:              #E6E6E6
+
+! ------------------------------------------------------------------------------
+! ROFI Options
+! ------------------------------------------------------------------------------
+rofi.bw:                0
+rofi.font:              SauceCodePro NF Regular 11
+rofi.fullscreen:        true
+rofi.lines:             6
+rofi.line-margin:       10
+rofi.separator-style:   solid
+rofi.terminal:          urxvt
+rofi.tokenize:          false
+rofi.padding:           300px
+!rofi.run-shell-command: {terminal} -e sh -c 'tmux new-session "{cmd}"'
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-normal:  argb:00282a36, #f8f8f2, argb:00373844, #44475a, #e2e2dc
+rofi.color-urgent:  argb:00282a36, #ff79c6, argb:00373844, #ff79c6, #282a36
+rofi.color-active:  argb:00282a36, #50fa7b, argb:00373844, #50fa7b, #282a36
+rofi.color-window:  argb:ee282a36, #282a36, #f4f99d
+
+!rofi.color-window:  #282a36, argb:0002b36, argb:0000000
+!rofi.color-active:  #282a36, #f1fa8c, #282a36, #282a36, #ff79c6
+!rofi.color-normal:  #282a36, #50fa7b, #282a36, #282a36, #ff79c6
+!rofi.color-urgent:  #282a36, #ff5555, #282a36, #282a36, #ff79c6
