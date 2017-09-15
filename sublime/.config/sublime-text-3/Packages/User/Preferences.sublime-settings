@@ -5,7 +5,8 @@
 	"font_face": "SauceCodePro Nerd Font",
 	"font_options":
 	[
-		"gray_antialias"
+		"gray_antialias",
+		"subpixel_antialias"
 	],
 	"font_size": 11,
 	"ignored_packages":
@@ -36,7 +37,7 @@
 	"tabs_label_not_italic": true,
 	"tabs_medium": false,
 	"tabs_small": false,
-	"theme": "Material-Theme.sublime-theme",
+	"theme": "Material-Theme-Palenight.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true
 }

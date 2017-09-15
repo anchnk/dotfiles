@@ -19,7 +19,6 @@
 		"Highlight Whitespaces",
 		"Indent XML",
 		"JavaScriptNext - ES6 Syntax",
-		"JSHint Gutter",
 		"JSONLint",
 		"Markdown Extended",
 		"Material Theme",
@@ -46,7 +45,6 @@
 		"SublimeLinter-html-tidy",
 		"Sync View Scroll",
 		"TrailingSpaces",
-		"Unicode Character Highlighter",
-		"WordCount"
+		"Unicode Character Highlighter"
 	]
 }
