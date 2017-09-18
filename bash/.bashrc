@@ -119,15 +119,58 @@ blue=$'\e[34m'
 pink=$'\e[31m'
 default=$'\e[00m'
 white=$'\e[00m'
+green=$'\e[32m'
+space=' '
 
 # Add git branch if its present to PS1
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+# Returns 0 if a current folder is versionned by git, 1 otherwise
+is_git_versionned() {
+  git_branch=$(git branch &> /dev/null)
+  if [ $?  -eq 0 ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Returns 0 if current folder has package.json, 1 otherwise
+is_node_project() {
+  if [ -f 'package.json' ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# Parse and pretty print active node version
+get_node_version() {
+  node_logo=`echo -e '\ue718'`
+  #node -v | sed "s/v/$node_logo\ /g"
+  node -v | sed "s/v/node\ v/g"
+}
+
+# Custom function that change $PS1 dynamically
+PROMPT_COMMAND='
+branch="";\
+node_version="";\
+if is_git_versionned; then\
+  branch=$(parse_git_branch);\
+fi;\
+if is_node_project; then\
+  node_version=$(get_node_version);\
+fi;'
+
 if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[${bold}\]\[${blue}\]\w\[${pink}\] \
-$(parse_git_branch)\[${default}\]\[${bold}\]\n› \[${default}\]'
+  PS1='${debian_chroot:+($debian_chroot)}\
+\[${bold}\]\[${blue}\]\w\
+\[${pink}\]$space$branch\
+\[${green}\]$space$node_version\
+\[${default}\]\[${bold}\]\n› \[${default}\]'
+
 else
   PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
 fi
