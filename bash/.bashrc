@@ -153,24 +153,38 @@ get_node_version() {
   node -v | sed "s/v/node\ v/g"
 }
 
+is_exit_status_ok() {
+  if [ $1 -eq 0 ]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 # Custom function that change $PS1 dynamically
 PROMPT_COMMAND='
+exit="$?"
 branch="";\
 node_version="";\
+previous_exit_status_color="";\
 if is_git_versionned; then\
   branch=$(parse_git_branch);\
 fi;\
 if is_node_project; then\
   node_version=$(get_node_version);\
-fi;'
+fi;\
+if is_exit_status_ok $exit; then\
+  previous_exit_status_color=${green};\
+else\
+  previous_exit_status_color=${pink};\
+fi'
 
 if [ "$color_prompt" = yes ]; then
   PS1='${debian_chroot:+($debian_chroot)}\
 \[${bold}\]\[${blue}\]\w\
 \[${pink}\]$space$branch\
 \[${green}\]$space$node_version\
-\[${default}\]\[${bold}\]\n› \[${default}\]'
-
+\[${default}\]\[${bold}\]\n$previous_exit_status_color› \[${default}\]'
 else
   PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
 fi
