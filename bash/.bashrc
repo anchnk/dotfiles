@@ -184,7 +184,7 @@ if [ "$color_prompt" = yes ]; then
 \[${bold}\]\[${blue}\]\w\
 \[${pink}\]$space$branch\
 \[${green}\]$space$node_version\
-\[${default}\]\[${bold}\]\n$previous_exit_status_color› \[${default}\]'
+\[${default}\]\[${bold}\]\n\[${previous_exit_status_color}\]› \[${default}\]'
 else
   PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
 fi
