@@ -50,3 +50,5 @@
 	name = Olivier Martin
 [url "https://"]
 	insteadOf = git://
+[pull]
+	rebase = true
