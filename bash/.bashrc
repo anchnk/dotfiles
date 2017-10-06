@@ -122,6 +122,9 @@ white=$'\e[00m'
 green=$'\e[32m'
 space=' '
 
+set_cursor_color() {
+  echo -ne '\e]12;#ff79c6\a'
+}
 # Add git branch if its present to PS1
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -184,11 +187,12 @@ if [ "$color_prompt" = yes ]; then
 \[${bold}\]\[${blue}\]\w\
 \[${pink}\]$space$branch\
 \[${green}\]$space$node_version\
-\[${default}\]\[${bold}\]\n\[${previous_exit_status_color}\]› \[${default}\]'
+\[${default}\]\[${bold}\]\n\[${previous_exit_status_color}\]›$space$cursor\[${default}\]'
 else
   PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
 fi
 unset color_prompt force_color_prompt
+set_cursor_color
 
 # SSH Hosts
 # . /etc/bash_completion.d/ssh
