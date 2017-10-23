@@ -48,6 +48,11 @@ map <Leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks = 1
 
 "-------------------------------------------------------------------------------
+" Plugin Settings - nercommenter
+"-------------------------------------------------------------------------------
+let g:NERDSpaceDelims = 1
+
+"-------------------------------------------------------------------------------
 " Plugin Settings - vim-better-whitespace
 "-------------------------------------------------------------------------------
 autocmd FileType <javascript, json, jproperties, sh, vim> \
