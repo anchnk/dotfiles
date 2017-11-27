@@ -1,149 +1,232 @@
-"-------------------------------------------------------------------------------
-" Plugins Install
-"-------------------------------------------------------------------------------
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'goatslacker/mango.vim'
-Plug 'dracula/vim'
-Plug 'dylanaraps/wal.vim'
-Plug 'rakr/vim-one'
-Plug 'bkzl/vim-arrows'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'w0rp/ale'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'eslint/eslint'
-Plug 'elzr/vim-json'
-Plug 'leafgarland/typescript-vim'
-Plug 'shutnik/jshint2.vim'
-Plug 'moll/vim-node'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'plasticboy/vim-markdown'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'rhysd/vim-grammarous'
-Plug 'potatoesmaster/i3-vim-syntax'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'benmills/vimux'
-Plug 'alpertuna/vim-header'
-call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"     ███╗   ██╗   ███████╗    ██████╗    ██╗   ██╗   ██╗   ███╗   ███╗
+"     ████╗  ██║   ██╔════╝   ██╔═══██╗   ██║   ██║   ██║   ████╗ ████║
+"     ██╔██╗ ██║   █████╗     ██║   ██║   ██║   ██║   ██║   ██╔████╔██║
+"     ██║╚██╗██║   ██╔══╝     ██║   ██║   ╚██╗ ██╔╝   ██║   ██║╚██╔╝██║
+"     ██║ ╚████║   ███████╗   ╚██████╔╝    ╚████╔╝    ██║   ██║ ╚═╝ ██║
+"     ╚═╝  ╚═══╝   ╚══════╝    ╚═════╝      ╚═══╝     ╚═╝   ╚═╝     ╚═╝
+"
+"     File: neovim/.config/nvim/init.vim
+"     Author: anchnk <anachronikgmail{dot}com>
+"     Date: 27.11.2017
+"     Last Modified Date: 27.11.2017
+"     Last Modified By: anchnk <anachronikgmail{dot}com>
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - airline
-"-------------------------------------------------------------------------------
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme='dracula'
+" Plugins {{{
+  call plug#begin('~/.local/share/nvim/plugged')
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - nerdtree
-"-------------------------------------------------------------------------------
-let mapleader = ',' " set custom leader char
-map <Leader>nt :NERDTreeToggle<CR>
-let NERDTreeShowBookmarks = 1
+  " File Navigation {{{
+    Plug 'junegunn/fzf'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - nercommenter
-"-------------------------------------------------------------------------------
-let g:NERDSpaceDelims = 1
+  " Statusline {{{
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - vim-better-whitespace
-"-------------------------------------------------------------------------------
-autocmd FileType <javascript, json, jproperties, sh, vim> \
-autocmd BufEnter <buffer> EnableStripWhitespaceOnSave
+  " Colorschemes {{{
+    Plug 'dracula/vim'
+    Plug 'tyrannicaltoucan/vim-deep-space'
+    Plug 'trevordmiller/nova-vim'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - jshint2
-"-------------------------------------------------------------------------------
-" jshint2 settings
-let jshint2_read = 1
-let jshint2_save = 1
+  " Syntax highlight {{{
+    Plug 'potatoesmaster/i3-vim-syntax'
+    Plug 'plasticboy/vim-markdown'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - vim-javascript
-"-------------------------------------------------------------------------------
-set foldmethod=syntax
-set foldlevel=20
-let g:javascript_plugin_jsdoc = 1
+  " Linters {{{
+    Plug 'w0rp/ale'
+    Plug 'eslint/eslint'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - typescript-vim
-"-------------------------------------------------------------------------------
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+  " JavaScript {{{
+    Plug 'pangloss/vim-javascript'
+    Plug 'moll/vim-node'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'elzr/vim-json'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - editorconfig-vim
-"-------------------------------------------------------------------------------
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+  " Tmux integration {{{
+    Plug 'tmux-plugins/vim-tmux'
+    Plug 'benmills/vimux'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - vim-markdown
-"-------------------------------------------------------------------------------
-let g:vim_markdown_conceal = 0
+  Plug 'alpertuna/vim-header'
+  Plug 'bkzl/vim-arrows'
+  Plug 'tpope/vim-fugitive'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'rhysd/vim-grammarous'
 
-"-------------------------------------------------------------------------------
-" Plugin Settings - vim-header
-"-------------------------------------------------------------------------------
-let g:header_auto_add_header = 0
-let g:header_field_author = 'anchnk'
-let g:header_field_author_email = 'anachronikgmail{dot}com'
+  call plug#end()
+" }}}
 
-"-------------------------------------------------------------------------------
-" Options - Behaviour
-"-------------------------------------------------------------------------------
-" Highights
-"highlight Search term=bold cterm=bold ctermfg=Red ctermbg=NONE
-"highlight NonText ctermfg=5
-"hi Normal guibg=NONE ctermbg=NONE
+" Plugin Settings {{{
+  " airline {{{
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 1
+    let g:airline_theme='dracula'
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Options - Appearance
-"-------------------------------------------------------------------------------
-set background=dark
-colorscheme dracula
-hi CursorLineNr term=bold ctermbg=NONE guibg=NONE cterm=bold gui=bold
-set guifont=SauceCodePro\ NF\ 11
-hi Normal guibg=#1D1E26
-set number          " Show line numbers
-set numberwidth=6   " Number of columns to use for line number
-set colorcolumn=80  " 80 character column delimiter
-set relativenumber  " Show relative line numbers
+  " vim-header {{{
+    let g:header_auto_add_header = 0
+    let g:header_field_author = 'anchnk'
+    let g:header_field_author_email = 'anachronikgmail{dot}com'
+    let g:header_max_size = 17
+    let g:header_alignment = 0
+  " }}}
 
-set encoding=utf-8
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
-set title           " Show file title in terminal tab
+  " vim-better-whitespace {{{
+    autocmd FileType <javascript, json, jproperties, sh, vim> \
+    autocmd BufEnter <buffer> EnableStripWhitespaceOnSave
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Options - Idents and Tabs
-"-------------------------------------------------------------------------------
-set expandtab       " Replace tabs with spaces in Insert mode.
-set tabstop=2       " Spaces that a <Tab> in file counts for.
-set shiftwidth=2    " Spaces for each (auto)indent.
+  " fzf {{{
+    let g:fzf_colors =
+    \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+    " }}}
 
-" Ident and tab options for specific file types.
-autocmd FileType markdown set textwidth=80
-autocmd FileType gitcommit set textwidth=72
+  " nerdcommenter {{{
+    let g:NERDSpaceDelims = 1
+  " }}}
 
-"-------------------------------------------------------------------------------
-" Mappings - General
-"-------------------------------------------------------------------------------
+  " vim-javascript {{{
+    set foldmethod=syntax
+    set foldlevel=20
+    let g:javascript_plugin_jsdoc = 1
+  " }}}
+
+  " vim-node {{{
+    " Vertical split file under cursor
+    autocmd User Node
+      \ if &filetype == "javascript" |
+      \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+      \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+      \ endif
+  " }}}
+
+  " typescript-vim {{{
+    autocmd QuickFixCmdPost [^l]* nested cwindow
+    autocmd QuickFixCmdPost    l* nested lwindow
+  " }}}
+
+  " editorconfig-vim {{{
+    let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+    let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
+  " }}}
+
+  " vim-markdown {{{
+    let g:vim_markdown_conceal = 0
+  " }}}
+" }}}
+
+" Neovim Providers {{{
+  let g:python_host_prog = '/usr/bin/python'
+  let g:python3_host_prog = '/usr/bin/python3'
+" }}}
+
+" Options - Behaviour {{{
+  let mapleader = ','
+  set cursorline
+  set encoding=utf-8
+  set inccommand=nosplit
+  set number          " Show line numbers
+  set relativenumber  " Show relative line numbers
+" }}}
+
+" Options - Appearance {{{
+
+  " True Color Support {{{
+    if has('nvim') || has('termguicolors')
+      set termguicolors
+    endif
+  " }}}
+
+  syntax enable
+  set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
+  set title           " Show file title in terminal tab
+  set colorcolumn=80  " 80 character column delimiter
+
+  " Colorscheme {{{
+    set background=dark
+    colorscheme dracula
+  " }}}
+
+  " Highlights {{{
+    hi Normal guibg=#1C1E26
+    hi LineNr guibg=#1C1E26
+    hi StatusLine guibg=#1C1E26
+    hi ExtraWhitespace guibg=#ff5555
+    hi CursorLineNr term=bold ctermbg=NONE guibg=#1c1e26 cterm=bold gui=bold
+  " }}}
+" }}}
+
+" Options Indents and Tabs {{{
+  set expandtab       " Replace tabs with spaces in Insert mode.
+  set tabstop=2       " Spaces that a <Tab> in file counts for.
+  set shiftwidth=2    " Spaces for each (auto)indent.
+
+  " Ident and tab options for specific file types.
+  autocmd FileType markdown set textwidth=80
+  autocmd FileType gitcommit set textwidth=72
+" }}}
+
+" Mappings - General {{{
+  " Disable arrows keys in normal mode {{{
+    nnoremap <Up>    ""
+    nnoremap <Down>  ""
+    nnoremap <Left>  ""
+    nnoremap <Right> ""
+  " }}}
+
+  " File navigation {{{
+    nmap <leader>f :call fzf#run(
+          \fzf#wrap({
+          \'source': 'git ls-files --exclude-standard --others --cached'
+          \}))<cr>
+    nmap <leader>F :call fzf#run(
+          \fzf#wrap({
+          \'source': 'git ls-files --exclude-standard --others --cached'
+          \}, 1))<cr>
+    nnoremap <C-j> :bprevious<CR>
+    nnoremap <C-k> :bnext<CR>
+  " }}}
+
+  " Buffer actions {{{
+    nnoremap <C-s> :w!<CR>
+    nnoremap <C-q> :wq!<CR>
+    noremap  <C-c> :bd!<CR>
+    nnoremap <C-L> :noh<CR>
+  " }}}
 
 
-" Disable Arrow Keys in normal mode
-nnoremap <Up>    ""
-nnoremap <Down>  ""
-nnoremap <Left>  ""
-nnoremap <Right> ""
+  nmap <leader>t :call VimuxRunCommand("./node_modules/.bin/mocha " .
+      \ expand('%'))<CR>
 
-nnoremap <C-L> :noh<cr>
-nnoremap <C-s> :w!<cr>
-nnoremap <C-q> :wq!<cr>
-noremap  <Leader>l :! hxvw <cword><cr><cr>
+  map <leader>y "*y
+  map <leader>P "*p
+" }}}
+
+" vim: foldmethod=marker:foldlevel=0
