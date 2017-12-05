@@ -231,4 +231,6 @@
   map <leader>P "*p
 " }}}
 
+au VimLeave * set guicursor=a:hor80-blinkon2
+
 " vim: foldmethod=marker:foldlevel=0
