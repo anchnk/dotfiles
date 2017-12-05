@@ -151,7 +151,9 @@
   let mapleader = ','
   set cursorline
   set encoding=utf-8
-  set inccommand=nosplit
+  if has("nvim")
+    set inccommand=nosplit
+  endif
   set number          " Show line numbers
   set relativenumber  " Show relative line numbers
 " }}}
