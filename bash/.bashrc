@@ -127,7 +127,8 @@ set_cursor_color() {
 }
 # Add git branch if its present to PS1
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  local GIT_BRANCH_SYMBOL=`echo -e '\u2387'`
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$GIT_BRANCH_SYMBOL"'  \1/'
 }
 
 # Returns 0 if a current folder is versionned by git, 1 otherwise
@@ -151,9 +152,10 @@ is_node_project() {
 
 # Parse and pretty print active node version
 get_node_version() {
-  node_logo=`echo -e '\ue718'`
-  #node -v | sed "s/v/$node_logo\ /g"
-  node -v | sed "s/v/node\ v/g"
+  # node_logo=`echo -e '\ue718'`
+  node_logo=`echo -e '\u2b22'`
+  node -v | sed "s/v/$node_logo\ /g"
+  # node -v | sed "s/v/node\ v/g"
 }
 
 is_exit_status_ok() {
