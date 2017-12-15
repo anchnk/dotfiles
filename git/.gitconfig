@@ -48,7 +48,10 @@
 [user]
 	email = omartin@fastbooking.net
 	name = Olivier Martin
+	signinkey = 8CFD3406454E23BC
 [url "https://"]
 	insteadOf = git://
 [pull]
 	rebase = true
+[gpg]
+	program = gpg2
