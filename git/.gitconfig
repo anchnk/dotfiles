@@ -1,10 +1,12 @@
 [alias]
+	lcb = "!git rev-parse --abbrev-ref HEAD"
 	ci = commit
 	# dsf : requires diff-so-fancy (https://github.com/so-fancy/diff-so-fancy)
 	dsf = "!f() { [ \"$GIT_PREFIX\" != \"\" ] && cd "$GIT_PREFIX"; git diff --color $@ | diff-so-fancy | less --tabs=4 -RFX; }; f"
        	fl = diff-tree --no-commit-id --name-only -r
 	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
 	pr = pull --rebase
+	publish = "!git push -u origin $(git lcb)"
 	st = status
 [color]
 	# Always use colored output for git diff (even when redirected)
