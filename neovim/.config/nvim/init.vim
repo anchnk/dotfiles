@@ -207,16 +207,21 @@
   " }}}
 
   " File navigation {{{
-    nmap <leader>f :call fzf#run(
-          \fzf#wrap({
-          \'source': 'git ls-files --exclude-standard --others --cached'
-          \}))<cr>
-    nmap <leader>F :call fzf#run(
-          \fzf#wrap({
-          \'source': 'git ls-files --exclude-standard --others --cached'
-          \}, 1))<cr>
-    nnoremap <C-j> :bprevious<CR>
-    nnoremap <C-k> :bnext<CR>
+    " fzf {{{
+      nmap <leader>f :call fzf#run(
+            \fzf#wrap({
+            \'source': 'git ls-files --exclude-standard --others --cached'
+            \}))<cr>
+      nmap <leader>F :call fzf#run(
+            \fzf#wrap({
+            \'source': 'git ls-files --exclude-standard --others --cached'
+            \}, 1))<cr>
+    " }}}
+
+    " buffers {{{
+      nnoremap <C-j> :bprevious<CR>
+      nnoremap <C-k> :bnext<CR>
+    " }}}
   " }}}
 
   " Buffer actions {{{
@@ -225,7 +230,6 @@
     noremap  <C-c> :bd!<CR>
     nnoremap <C-L> :noh<CR>
   " }}}
-
 
   nmap <leader>t :call VimuxRunCommand("./node_modules/.bin/mocha " .
       \ expand('%'))<CR>
