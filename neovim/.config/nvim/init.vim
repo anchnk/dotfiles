@@ -22,8 +22,8 @@
   " }}}
 
   " Statusline {{{
-    Plug 'bling/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    " Plug 'bling/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
   " }}}
 
   " Colorschemes {{{
