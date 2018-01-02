@@ -22,4 +22,4 @@ patched-src
 .nfs*
 
 # neovim history
-.netrwhist*
+neovim/.config/nvim/.netrwhist
