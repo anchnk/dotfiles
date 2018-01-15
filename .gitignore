@@ -23,3 +23,6 @@ patched-src
 
 # neovim history
 neovim/.config/nvim/.netrwhist
+
+# inhouse aliases
+bash/.bash_inhouse_aliases
