@@ -109,16 +109,12 @@ if ! shopt -oq posix; then
 fi
 
 #### --- CUSTOMIZATION START ---
-
 ## Prompt Configuration
 # Colors
 bold=$(tput bold)
-normal=$(tput sgr0)
-orange=$'\e[38;2;255;102;0m'
 blue=$'\e[34m'
 pink=$'\e[31m'
 default=$'\e[00m'
-white=$'\e[00m'
 green=$'\e[32m'
 space=' '
 
@@ -127,7 +123,8 @@ set_cursor_color() {
 }
 # Add git branch if its present to PS1
 parse_git_branch() {
-  local GIT_BRANCH_SYMBOL=`echo -e '\u2387'`
+  local GIT_BRANCH_SYMBOL
+  GIT_BRANCH_SYMBOL=$(echo -e '\u2387')
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$GIT_BRANCH_SYMBOL"'  \1/'
 }
 
@@ -153,13 +150,13 @@ is_node_project() {
 # Parse and pretty print active node version
 get_node_version() {
   # node_logo=`echo -e '\ue718'`
-  node_logo=`echo -e '\u2b22'`
+  node_logo=$(echo -e '\u2b22')
   node -v | sed "s/v/$node_logo\ /g"
   # node -v | sed "s/v/node\ v/g"
 }
 
 is_exit_status_ok() {
-  if [ $1 -eq 0 ]; then
+  if [ "$1" -eq 0 ]; then
     return 0
   else
     return 1
