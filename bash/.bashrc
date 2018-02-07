@@ -109,90 +109,123 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#### --- CUSTOMIZATION START ---
-## Prompt Configuration
-# Colors
-bold=$(tput bold)
-blue=$'\e[34m'
-pink=$'\e[31m'
-default=$'\e[00m'
-green=$'\e[32m'
-space=' '
+#------------------------------------------------------------------------------
+#                              CUSTOMIZATION START
+#------------------------------------------------------------------------------
+
+p_chroot() {
+  echo "${debian_chroot:+($debian_chroot)}"
+}
+
+p_cwd() {
+  bold=$(tput bold)
+  blue=$'\e[34m'
+  echo "$bold$blue\w"
+}
+
+p_prompt() {
+  prompt_symbol="›"
+  default=$'\e[00m'
+  printf "\n%s %s" $prompt_symbol $default
+}
+
+parse_git_branch() {
+  git_branch_symbol=$(echo -e '\u2387')
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$git_branch_symbol"'  \1/'
+}
+
+p_git_branch() {
+  git_versionned=$(git branch &> /dev/null)
+  if [ $? -eq 0 ]; then
+    branch=$(parse_git_branch)
+  fi
+  pink=$'\e[31m'
+  echo "$pink$branch"
+}
+
+p_node() {
+  if [ -f 'package.json' ]; then
+    node_logo=$(echo -e '\u2b22')
+    node=$(node -v | sed "s/v/$node_logo\ /g")
+  fi
+  green=$'\e[32m'
+  echo "$green$node"
+}
 
 set_cursor_color() {
   echo -ne '\e]12;#ff79c6\a'
 }
+
+PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node)$(p_prompt)"
+set_cursor_color
+
+# OLD PROMPT ---------------------------------------------------------------{{{
+## Prompt Configuration
+# Colors
+# bold=$(tput bold)
+# blue=$'\e[34m'
+# pink=$'\e[31m'
+# default=$'\e[00m'
+# green=$'\e[32m'
+# space=' '
+
 # Add git branch if its present to PS1
-parse_git_branch() {
-  local GIT_BRANCH_SYMBOL
-  GIT_BRANCH_SYMBOL=$(echo -e '\u2387')
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$GIT_BRANCH_SYMBOL"'  \1/'
-}
+# parse_git_branch() {
+  # local GIT_BRANCH_SYMBOL
+  # GIT_BRANCH_SYMBOL=$(echo -e '\u2387')
+  # git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$GIT_BRANCH_SYMBOL"'  \1/'
+# }
 
 # Returns 0 if a current folder is versionned by git, 1 otherwise
-is_git_versionned() {
-  git_branch=$(git branch &> /dev/null)
-  if [ $?  -eq 0 ]; then
-    return 0
-  else
-    return 1
-  fi
-}
+# is_git_versionned() {
+  # git_branch=$(git branch &> /dev/null)
+  # if [ $?  -eq 0 ]; then
+    # return 0
+  # else
+    # return 1
+  # fi
+# }
 
 # Returns 0 if current folder has package.json, 1 otherwise
-is_node_project() {
-  if [ -f 'package.json' ]; then
-    return 0
-  else
-    return 1
-  fi
-}
+# is_node_project() {
+  # if [ -f 'package.json' ]; then
+    # return 0
+  # else
+    # return 1
+  # fi
+# }
 
 # Parse and pretty print active node version
-get_node_version() {
-  # node_logo=`echo -e '\ue718'`
-  node_logo=$(echo -e '\u2b22')
-  node -v | sed "s/v/$node_logo\ /g"
-  # node -v | sed "s/v/node\ v/g"
-}
+# get_node_version() {
+  # node_logo=$(echo -e '\u2b22')
+  # node -v | sed "s/v/$node_logo\ /g"
+# }
 
-is_exit_status_ok() {
-  if [ "$1" -eq 0 ]; then
-    return 0
-  else
-    return 1
-  fi
-}
+# is_exit_status_ok() {
+  # if [ "$1" -eq 0 ]; then
+    # return 0
+  # else
+    # return 1
+  # fi
+# }
 
 # Custom function that change $PS1 dynamically
-PROMPT_COMMAND='
-exit="$?"
-branch="";\
-node_version="";\
-previous_exit_status_color="";\
-if is_git_versionned; then\
-  branch=$(parse_git_branch);\
-fi;\
-if is_node_project; then\
-  node_version=$(get_node_version);\
-fi;\
-if is_exit_status_ok $exit; then\
-  previous_exit_status_color=${green};\
-else\
-  previous_exit_status_color=${pink};\
-fi'
-
-if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\
-\[${bold}\]\[${blue}\]\w\
-\[${pink}\]$space$branch\
-\[${green}\]$space$node_version\
-\[${default}\]\[${bold}\]\n\[${previous_exit_status_color}\]›$space$cursor\[${default}\]'
-else
-  PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
-fi
-unset color_prompt force_color_prompt
-set_cursor_color
+# PROMPT_COMMAND='
+# exit="$?"
+# branch="";\
+# node_version="";\
+# previous_exit_status_color="";\
+# if is_git_versionned; then\
+  # branch=$(parse_git_branch);\
+# fi;\
+# if is_node_project; then\
+  # node_version=$(get_node_version);\
+# fi;\
+# if is_exit_status_ok $exit; then\
+  # previous_exit_status_color=${green};\
+# else\
+  # previous_exit_status_color=${pink};\
+# fi'
 
 # SSH Hosts
 # . /etc/bash_completion.d/ssh
