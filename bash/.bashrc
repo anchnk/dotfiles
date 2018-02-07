@@ -227,15 +227,42 @@ set_cursor_color
   # previous_exit_status_color=${pink};\
 # fi'
 
-# SSH Hosts
+# if [ "$color_prompt" = yes ]; then
+  # PS1='${debian_chroot:+($debian_chroot)}
+# \[${bold}\]\[${blue}\]\w\
+# \[${pink}\]$space$branch\
+# \[${green}\]$space$node_version\
+# \[${default}\]\[${bold}\]\n\[${previous_exit_status_color}\]›$space$cursor\[${default}\]'
+# else
+  # PS1='${debian_chroot:+($debian_chroot)}\u:\w $(parse_git_branch)\n\$ '
+# fi
+# unset color_prompt force_color_prompt
+# set_cursor_color
+# --------------------------------------------------------------------------}}}
+
+# SSH ----------------------------------------------------------------------{{{
+# FIXME look at old box backup to see what was in this file (system wide ?)
 # . /etc/bash_completion.d/ssh
+# --------------------------------------------------------------------------}}}
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# NVM ----------------------------------------------------------------------{{{
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# --------------------------------------------------------------------------}}}
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/omartin/.sdkman"
-[[ -s "/home/omartin/.sdkman/bin/sdkman-init.sh" ]] && source "/home/omartin/.sdkman/bin/sdkman-init.sh"
+# FZF ----------------------------------------------------------------------{{{
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+# --------------------------------------------------------------------------}}}
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# AWS ----------------------------------------------------------------------{{{
+  source "$HOME/code/inhouse/aws_auth/aws-functions.sh"
+  source "$HOME/.app-env"
+# --------------------------------------------------------------------------}}}
+
+# SDKMAN -------------------------------------------------------------------{{{
+  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+  # export SDKMAN_DIR="/home/omartin/.sdkman"
+  # [[ -s "/home/omartin/.sdkman/bin/sdkman-init.sh" ]] && source "/home/omartin/.sdkman/bin/sdkman-init.sh"
+# --------------------------------------------------------------------------}}}
