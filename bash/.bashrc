@@ -113,6 +113,7 @@ fi
 #                              CUSTOMIZATION START
 #------------------------------------------------------------------------------
 
+# PROMPT -------------------------------------------------------------------{{{
 p_chroot() {
   echo "${debian_chroot:+($debian_chroot)}"
 }
@@ -120,27 +121,22 @@ p_chroot() {
 p_cwd() {
   bold=$(tput bold)
   blue=$'\e[34m'
-  echo "$bold$blue\w"
+  echo "${bold}\[${blue}\]\w"
 }
 
 p_prompt() {
   prompt_symbol="›"
   default=$'\e[00m'
-  printf "\n%s %s" $prompt_symbol $default
-}
-
-parse_git_branch() {
-  git_branch_symbol=$(echo -e '\u2387')
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/'"$git_branch_symbol"'  \1/'
+  printf "\n%s%s \[%s\]" "$1" $prompt_symbol $default
 }
 
 p_git_branch() {
-  git_versionned=$(git branch &> /dev/null)
-  if [ $? -eq 0 ]; then
-    branch=$(parse_git_branch)
+  branch=$(git symbolic-ref -q --short HEAD 2> /dev/null)
+  if [ -n "$branch" ]; then
+    local pink=$'\e[31m'
+    git_branch_symbol=$(echo -e '\u2387')
   fi
-  pink=$'\e[31m'
-  echo "$pink$branch"
+  echo "${pink}$git_branch_symbol  $branch"
 }
 
 p_node() {
@@ -156,8 +152,17 @@ set_cursor_color() {
   echo -ne '\e]12;#ff79c6\a'
 }
 
-PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node)$(p_prompt)"
-set_cursor_color
+export PROMPT_COMMAND=set_prompt
+
+set_prompt() {
+  local ex=$?
+  local pink=$'\e[31m'
+  local green=$'\e[32m'
+  [[ "$ex" -ne 0 ]] && ex_color=$pink || ex_color=$green
+  PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node)$(p_prompt $ex_color)"
+  set_cursor_color
+}
+# --------------------------------------------------------------------------}}}
 
 # OLD PROMPT ---------------------------------------------------------------{{{
 ## Prompt Configuration
