@@ -17,13 +17,26 @@
 " Plugins {{{
   call plug#begin('~/.local/share/nvim/plugged')
 
+  " Generic Utilities {{{
+    Plug 'bkzl/vim-arrows'
+    Plug 'rhysd/vim-grammarous'
+  " }}}
+
+  " Generic Coding Utilities {{{
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'alpertuna/vim-header'
+  " }}}
+
   " File Navigation {{{
     Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
   " }}}
 
   " Statusline {{{
-    " Plug 'bling/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'bling/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
   " }}}
 
   " Colorschemes {{{
@@ -49,19 +62,15 @@
     Plug 'elzr/vim-json'
   " }}}
 
+  " Source Versioning {{{
+    Plug 'tpope/vim-fugitive'
+  " }}}
+
   " Tmux integration {{{
     Plug 'tmux-plugins/vim-tmux'
     Plug 'benmills/vimux'
   " }}}
 
-  Plug 'alpertuna/vim-header'
-  Plug 'bkzl/vim-arrows'
-  Plug 'tpope/vim-fugitive'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'nathanaelkane/vim-indent-guides'
-  Plug 'ntpeters/vim-better-whitespace'
-  Plug 'rhysd/vim-grammarous'
 
   call plug#end()
 " }}}
