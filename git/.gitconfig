@@ -22,6 +22,8 @@
 	newNormal = "green bold"
 	oldHighlight = "red bold 52"
 	oldNormal = "red bold"
+[commit]
+  gpgsign = true
 [core]
 	# autocrlf = true
 	editor = nvim
@@ -34,6 +36,8 @@
 	# Show renames/moves as such
 	renames = true
 	tool = meld
+[gpg]
+	program = gpg2
 [help]
 	autocorrect = 1
 [log]
@@ -42,6 +46,8 @@
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
+[pull]
+	rebase = true
 [push]
 	default = upstream
 	followTags = true
@@ -53,7 +59,3 @@
 	signinkey = 8CFD3406454E23BC
 [url "https://"]
 	insteadOf = git://
-[pull]
-	rebase = true
-[gpg]
-	program = gpg2
