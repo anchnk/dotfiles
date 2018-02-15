@@ -121,13 +121,13 @@ p_chroot() {
 p_cwd() {
   bold=$(tput bold)
   blue=$'\e[34m'
-  echo "${bold}\[${blue}\]\w"
+  printf "\[%s\]\[%s\]\w" "$bold" "$blue"
 }
 
 p_prompt() {
   prompt_symbol="›"
   default=$'\e[00m'
-  printf "\n%s%s \[%s\]" "$1" $prompt_symbol $default
+  printf "\n\[%s\]%s \[%s\]" "$1" $prompt_symbol $default
 }
 
 p_git_branch() {
@@ -136,7 +136,7 @@ p_git_branch() {
     local pink=$'\e[31m'
     git_branch_symbol=$(echo -e '\u2387')
   fi
-  echo "${pink}$git_branch_symbol  $branch"
+  echo "$pink$git_branch_symbol  $branch"
 }
 
 p_node() {
@@ -145,7 +145,7 @@ p_node() {
     node=$(node -v | sed "s/v/$node_logo\ /g")
   fi
   green=$'\e[32m'
-  echo "$green$node"
+  printf "%s%s" "$green" "$node"
 }
 
 set_cursor_color() {
