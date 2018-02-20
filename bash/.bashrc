@@ -148,8 +148,18 @@ p_node() {
   printf "%s%s" "$green" "$node"
 }
 
+
 set_cursor_color() {
   echo -ne '\e]12;#ff79c6\a'
+}
+
+load_nvmrc() {
+  if [[ "$PWD" == "$PREV_PWD" ]]; then
+    return
+  fi
+
+  PREV_PWD=$PWD
+  [[ -f ".nvmrc" ]] && nvm use
 }
 
 export PROMPT_COMMAND=set_prompt
@@ -159,6 +169,7 @@ set_prompt() {
   local pink=$'\e[31m'
   local green=$'\e[32m'
   [[ "$ex" -ne 0 ]] && ex_color=$pink || ex_color=$green
+  load_nvmrc
   PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node)$(p_prompt $ex_color)"
   set_cursor_color
 }
