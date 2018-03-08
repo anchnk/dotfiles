@@ -1,4 +1,11 @@
 VteTerminal,
+
+TerminalWindow .notebook {
+  border: 0;
+  padding: 0;
+  border-color: #190f28
+}
+
 TerminalScreen {
     -VteTerminal-padding: 0px;
     -VteTerminal-inner-border: 0px 0px 0px 0px;
