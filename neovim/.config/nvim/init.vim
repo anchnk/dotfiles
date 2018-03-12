@@ -26,6 +26,7 @@
     Plug 'editorconfig/editorconfig-vim'
     Plug 'junegunn/goyo.vim'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'godlygeek/tabular'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'alpertuna/vim-header'
   " }}}
