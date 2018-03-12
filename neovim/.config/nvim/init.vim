@@ -9,7 +9,7 @@
 "     File: neovim/.config/nvim/init.vim
 "     Author: anchnk <anachronikgmail{dot}com>
 "     Date: 27.11.2017
-"     Last Modified Date: 27.11.2017
+"     Last Modified Date: 12.03.2018
 "     Last Modified By: anchnk <anachronikgmail{dot}com>
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,13 +73,17 @@
     Plug 'benmills/vimux'
   " }}}
 
-
   call plug#end()
 " }}}
 
 " Plugin Settings {{{
+  " ale {{{
+    let g:ale_javascript_prettier_use_local_config = 1
+  " }}}
+
   " airline {{{
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#ale#enabled = 1
     let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
