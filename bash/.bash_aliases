@@ -1,6 +1,7 @@
 alias cd.='cd $dotfiles'
 alias cd~='cd ~'
 alias cd..='cd ..'
+alias gaso='git commit --amend --signoff'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
