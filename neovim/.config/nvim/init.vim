@@ -79,6 +79,9 @@
 " Plugin Settings {{{
   " ale {{{
     let g:ale_javascript_prettier_use_local_config = 1
+    let g:ale_fixers = {
+    \  'javascript': ['eslint'],
+    \}
   " }}}
 
   " airline {{{
