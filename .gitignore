@@ -26,3 +26,6 @@ neovim/.config/nvim/.netrwhist
 
 # inhouse aliases
 bash/.bash_inhouse_aliases
+
+# inhouse git config
+git/.gitconfig.inhouse

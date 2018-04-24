@@ -1,0 +1,7 @@
+[credential]
+  helper = cache
+[commit]
+  gpgsign = false
+[user]
+  name = anchnk
+  email = anachronik@gmail.com

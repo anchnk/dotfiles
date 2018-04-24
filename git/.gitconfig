@@ -22,8 +22,6 @@
 	newNormal = "green bold"
 	oldHighlight = "red bold 52"
 	oldNormal = "red bold"
-[commit]
-  gpgsign = true
 [core]
 	# autocrlf = true
 	editor = nvim
@@ -36,8 +34,6 @@
 	# Show renames/moves as such
 	renames = true
 	tool = meld
-[gpg]
-	program = gpg2
 [help]
 	autocorrect = 1
 [log]
@@ -53,9 +49,9 @@
 	followTags = true
 [status]
 	showUntrackedFiles = all
-[user]
-	email = omartin@fastbooking.net
-	name = Olivier Martin
-	signinkey = 8CFD3406454E23BC
+[includeIf "gitdir:~/code/public/"]
+  path = ~/.gitconfig.oss
+[includeIf "gitdir:/usr/local/"]
+  path = ~/.gitconfig.inhouse
 [url "https://"]
 	insteadOf = git://
