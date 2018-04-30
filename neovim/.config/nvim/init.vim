@@ -261,6 +261,12 @@
     nnoremap <C-L> :noh<CR>
   " }}}
 
+  " Saved Macros {{{
+    function! FormatCWLogs()
+      normal 0v$:s/] /]\r/gggvG:sort
+    endfunction
+  " }}}
+
   nmap <leader>t :call VimuxRunCommand("./node_modules/.bin/mocha " .
       \ expand('%'))<CR>
 
