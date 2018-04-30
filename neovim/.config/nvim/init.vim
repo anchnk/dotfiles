@@ -177,7 +177,7 @@
 
 " Options - Behaviour {{{
   let mapleader = ','
-  set cursorline
+  " set cursorline
   set encoding=utf-8
   if has("nvim")
     set inccommand=nosplit
@@ -206,12 +206,8 @@
 
   " Highlights {{{
     hi Normal guibg=NONE
-    hi LineNr guibg=NONE
     hi Folded guibg=NONE
-    " hi Normal guibg=#1C1E26
-    " hi LineNr guibg=#1C1E26
-    " hi StatusLine guibg=#1C1E26
-    " hi ExtraWhitespace guibg=#ff5555
+    hi ExtraWhitespace guibg=#ff5555
     " hi CursorLineNr term=bold ctermbg=NONE guibg=#1c1e26 cterm=bold gui=bold
   " }}}
 " }}}
