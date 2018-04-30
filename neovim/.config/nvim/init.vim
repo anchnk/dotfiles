@@ -194,10 +194,16 @@
     endif
   " }}}
 
+  " Enable syntax highlighting
   syntax enable
-  set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
-  set title           " Show file title in terminal tab
-  set colorcolumn=80  " 80 character column delimiter
+  " Set symbo
+  set listchars=space:.,eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
+  " Show file title in terminal tab
+  set title
+  " 80 Character column delimiter
+  set colorcolumn=80
+  " reset cursor shape after exit
+  au VimLeave * set guicursor=a:hor80-blinkon2
 
   " Colorscheme {{{
     set background=dark
