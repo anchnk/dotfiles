@@ -270,10 +270,10 @@
   nmap <leader>t :call VimuxRunCommand("./node_modules/.bin/mocha " .
       \ expand('%'))<CR>
 
+  map <leader>a :ALEFix<CR>
   map <leader>y "*y
   map <leader>P "*p
 " }}}
 
-au VimLeave * set guicursor=a:hor80-blinkon2
 
 " vim: foldmethod=marker:foldlevel=0
