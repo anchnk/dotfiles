@@ -20,17 +20,18 @@ Xft.rgba:       rgb
 #define DRACULA_Green       #50fa7b
 #define DRACULA_Yellow      #f1fa8c
 #define DRACULA_Cyan        #8be9fd
+#define DRACULA_Comment     #6272a4
 
 ! ------------------------------------------------------------------------------
 ! URxvt
 ! ------------------------------------------------------------------------------
-URxvt.font:             xft:SauceCodePro Nerd Font:style=Regular
-URxvt*boldFont:         xft:SauceCodePro Nerd Font:style=Bold
+URxvt.font:             xft:sauceCodePro Nerd Font:style=Regular:pixelsize=12
+URxvt*boldFont:         xft:sauceCodePro Nerd Font:style=Bold
 URxvt*cursorUnderline:  true
 URxvt*transparent:      true
 URxvt.depth:            32
 URxvt.shading:          30
-URxvt.background:       rgba:3333/3333/3333/e3e3
+URxvt.background:       rgba:0000/0000/0000/e3e3
 URxvt.internalBorder:   15
 URxvt.letterSpace:      -2
 URxvt.scrollBar:        false
@@ -60,7 +61,8 @@ URxvt.iso14755_52:      false
 *.color13:              #FF92D0
 *.color6:               DRACULA_Cyan
 *.color14:              #9AEDFE
-*.color7:               #BFBFBF
+! *.color7:               #BFBFBF
+*.color7:               DRACULA_Comment
 *.color15:              #E6E6E6
 
 ! ------------------------------------------------------------------------------
