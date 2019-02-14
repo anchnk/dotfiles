@@ -24,6 +24,12 @@
 
   " Generic Coding Utilities {{{
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'autozimu/LanguageClient-neovim', {
+         \ 'branch': 'next',
+         \ 'do': 'bash install.sh',
+         \ }
+    Plug 'Shougo/denite.nvim'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'junegunn/goyo.vim'
     Plug 'scrooloose/nerdcommenter'
     Plug 'godlygeek/tabular'
@@ -91,6 +97,19 @@
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
     let g:airline_theme='dracula'
+  " }}}
+
+  " deoplete {{{
+    let g:deoplete#enable_at_startup  = 1
+  " }}}
+
+  " LanguageClient-neovim {{{
+    set hidden
+
+    let g:LanguageClient_serverCommands = {
+        \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+        \ 'javascript': ['javascript-typescript-stdio']
+        \ }
   " }}}
 
   " vim-header {{{
