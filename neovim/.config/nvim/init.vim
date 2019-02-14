@@ -38,6 +38,7 @@
   " }}}
 
   " File Navigation {{{
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
   " }}}
