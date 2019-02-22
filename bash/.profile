@@ -22,6 +22,8 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 ################################################################################
 #                             START CUSTOM SECTION
 ################################################################################
+## Bash Built-in
+export PROMPT_DIRTRIM=3
 ## Git local repository
 export git_local_repo="$HOME/code"
 export inhouse_repos="$git_local_repo/inhouse"
