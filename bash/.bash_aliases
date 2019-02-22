@@ -1,7 +1,6 @@
 alias cd..='cd ..'
 alias cd.='cd $dotfiles'
 alias cd~='cd ~'
-alias cd..='cd ..'
 alias gaso='git commit --amend --signoff'
 alias l='ls -CF'
 alias la='ls -A'
@@ -19,7 +18,6 @@ alias nv.='nv .'
 alias nv='nvim'
 alias tm='tmux'
 alias tmns='tmux new -s $(get-last-and-parent-folder.sh)'
-alias nrp='npx nrp'
 alias x='exit'
 
 source "$HOME/.bash_inhouse_aliases"
