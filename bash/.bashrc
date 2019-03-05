@@ -136,18 +136,38 @@ p_git_branch() {
     local pink=$'\e[31m'
     git_branch_symbol=$(echo -e '\u2387')
   fi
-  echo "$pink$git_branch_symbol  $branch"
+  # echo "$pink$git_branch_symbol  $branch"
+  printf "%s%s %s" "$pink" "$git_branch_symbol"  "$branch"
+}
+
+get_package_field_value() {
+  local field_name="$1"
+
+  package_field_value=$(                           \
+    awk                                            \
+    -v fvalue="$field_name"                        \
+    '$0 ~ fvalue { gsub(/"|,/, "", $2); print $2}' \
+    < package.json                                 \
+  )
+  echo "$package_field_value"
 }
 
 p_node() {
   if [ -f 'package.json' ]; then
     node_logo=$(echo -e '\u2b22')
-    node=$(node -v | sed "s/v/$node_logo\ /g")
+    node=$(node -v | sed "s/v/$node_logo\  /g")
   fi
   green=$'\e[32m'
   printf "%s%s" "$green" "$node"
 }
 
+p_package_version() {
+  if [ -f 'package.json' ]; then
+    package_version=$(get_package_field_value "version")
+    red=$'\e[35m'
+    printf "%s%s %s" "$red" "📦" "$package_version"
+  fi
+}
 
 set_cursor_color() {
   echo -ne '\e]12;#ff79c6\a'
@@ -170,7 +190,7 @@ set_prompt() {
   local green=$'\e[32m'
   [[ "$ex" -ne 0 ]] && ex_color=$pink || ex_color=$green
   load_nvmrc
-  PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node)$(p_prompt $ex_color)"
+  PS1="\$(p_chroot)$(p_cwd) \$(p_git_branch) \$(p_node) \$(p_package_version) $(p_prompt $ex_color)"
   set_cursor_color
 }
 # --------------------------------------------------------------------------}}}
