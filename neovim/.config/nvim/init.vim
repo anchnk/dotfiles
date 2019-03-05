@@ -119,7 +119,7 @@
     let g:header_auto_add_header = 0
     let g:header_field_author = 'anchnk'
     let g:header_field_author_email = 'anachronikgmail{dot}com'
-    let g:header_max_size = 17
+    let g:header_max_size = 14
     let g:header_alignment = 0
   " }}}
 
