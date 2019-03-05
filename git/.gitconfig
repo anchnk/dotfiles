@@ -49,7 +49,7 @@
 	followTags = true
 [status]
 	showUntrackedFiles = all
-[includeIf "gitdir:~/code/public/"]
+[includeIf "gitdir:~/code/"]
   path = ~/.gitconfig.oss
 [includeIf "gitdir:/usr/local/"]
   path = ~/.gitconfig.inhouse
