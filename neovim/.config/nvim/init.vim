@@ -35,6 +35,8 @@
     Plug 'godlygeek/tabular'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'alpertuna/vim-header'
+    Plug 'tpope/vim-projectionist'
+    Plug 'janko-m/vim-test'
   " }}}
 
   " File Navigation {{{
@@ -191,6 +193,14 @@
 
   " vim-markdown {{{
     let g:vim_markdown_conceal = 0
+  " }}}
+
+  " vimux {{{
+    let g:VimuxOrientation = "h"
+  " }}}
+
+  " vim-test {{{
+    let test#strategy = "vimux"
   " }}}
 " }}}
 
