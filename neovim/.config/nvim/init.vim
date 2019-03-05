@@ -9,7 +9,7 @@
 "     File: neovim/.config/nvim/init.vim
 "     Author: anchnk <anachronikgmail{dot}com>
 "     Date: 27.11.2017
-"     Last Modified Date: 12.03.2018
+"     Last Modified Date: 05.03.2019
 "     Last Modified By: anchnk <anachronikgmail{dot}com>
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,7 +87,7 @@
   " ale {{{
     let g:ale_javascript_prettier_use_local_config = 1
     let g:ale_fixers = {
-    \  'javascript': ['eslint'],
+    \  'javascript': ['prettier', 'eslint'],
     \}
   " }}}
 
@@ -161,9 +161,13 @@
   " }}}
 
   " vim-javascript {{{
-    set foldmethod=syntax
-    set foldlevel=20
+    set conceallevel=1
     let g:javascript_plugin_jsdoc = 1
+
+    augroup javascript_folding
+      au!
+      au FileType javascript setlocal foldmethod=syntax
+    augroup END
   " }}}
 
   " vim-node {{{
@@ -204,6 +208,14 @@
   endif
   set number          " Show line numbers
   set relativenumber  " Show relative line numbers
+
+  " Templates {{{
+    if has("autocmd")
+      augroup templates
+        autocmd BufNewFile *.js 0r ~/.vim-templates/skeleton.js
+      augroup END
+    endif
+  " }}}
 " }}}
 
 " Options - Appearance {{{
