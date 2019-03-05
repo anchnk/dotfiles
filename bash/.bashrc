@@ -302,3 +302,14 @@ source "$HOME/.app-env"
   # export SDKMAN_DIR="/home/omartin/.sdkman"
   # [[ -s "/home/omartin/.sdkman/bin/sdkman-init.sh" ]] && source "/home/omartin/.sdkman/bin/sdkman-init.sh"
 # --------------------------------------------------------------------------}}}
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/omartin/.nvm/versions/node/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
