@@ -24,12 +24,8 @@
 
   " Generic Coding Utilities {{{
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'autozimu/LanguageClient-neovim', {
-         \ 'branch': 'next',
-         \ 'do': 'bash install.sh',
-         \ }
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
     Plug 'Shougo/denite.nvim'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'junegunn/goyo.vim'
     Plug 'scrooloose/nerdcommenter'
     Plug 'godlygeek/tabular'
@@ -103,17 +99,13 @@
     \}
   " }}}
 
-  " airline {{{
-    " let g:airline_powerline_fonts = 1
-    " let g:airline#extensions#ale#enabled = 1
-    " let g:airline#extensions#branch#enabled = 1
-    " let g:airline#extensions#tabline#enabled = 1
-    " let g:airline#extensions#tabline#buffer_nr_show = 1
-    " let g:airline_theme='dracula'
-  " }}}
+  " coc-vim {{{
+    set hidden
 
-  " deoplete {{{
-    let g:deoplete#enable_at_startup  = 1
+    " Increase room for LSP messages
+    set cmdheight=2
+
+    set shortmess+=c
   " }}}
 
   " lightline {{{
@@ -121,21 +113,19 @@
           \ 'colorscheme': 'dracula',
           \ 'active': {
           \   'left': [ [ 'mode', 'paste' ],
-          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+          \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
           \ },
           \ 'component_function': {
-          \   'gitbranch': 'fugitive#head'
+          \   'gitbranch': 'fugitive#head',
+          \   'cocstatus': 'coc#status'
           \ },
+          \ 'tabline': {
+          \   'left': [ [ 'filename' ] ],
+          \   'right': [ [ ] ]
           \ }
-  " }}}
-
-  " LanguageClient-neovim {{{
-    set hidden
-
-    let g:LanguageClient_serverCommands = {
-        \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-        \ 'javascript': ['javascript-typescript-stdio']
-        \ }
+          \ }
+    set showtabline=2
   " }}}
 
   " vim-header {{{
