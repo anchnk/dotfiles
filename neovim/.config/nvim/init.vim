@@ -348,6 +348,7 @@
   " }}}
 
   map <leader>a :ALEFix<CR>
+  map <leader>b :Buf<CR>
   map <leader>A :A<CR>
   map <leader>I :IstanbulToggle<CR>
   map <leader>y "*y
