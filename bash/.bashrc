@@ -134,7 +134,8 @@ p_git_branch() {
   branch=$(git symbolic-ref -q --short HEAD 2> /dev/null)
   if [ -n "$branch" ]; then
     local pink=$'\e[31m'
-    git_branch_symbol=$(echo -e '\u2387')
+    # git_branch_symbol=$(echo -e '\u2387')
+    git_branch_symbol=$(echo -e '\ue0a0')
   fi
   # echo "$pink$git_branch_symbol  $branch"
   printf "%s%s %s" "$pink" "$git_branch_symbol"  "$branch"
@@ -295,6 +296,13 @@ set_prompt() {
 # AWS ----------------------------------------------------------------------{{{
 source "$HOME/code/inhouse/aws_auth/aws-functions.sh"
 source "$HOME/.app-env"
+# --------------------------------------------------------------------------}}}
+
+# EXERCISM -----------------------------------------------------------------{{{
+# shellcheck source=/dev/null
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+  source ~/.config/exercism/exercism_completion.bash
+fi
 # --------------------------------------------------------------------------}}}
 
 # SDKMAN -------------------------------------------------------------------{{{
