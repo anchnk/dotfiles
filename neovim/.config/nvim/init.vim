@@ -46,8 +46,9 @@
   " }}}
 
   " Statusline {{{
-    Plug 'bling/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    " Plug 'bling/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
   " }}}
 
   " Colorschemes {{{
@@ -103,16 +104,29 @@
   " }}}
 
   " airline {{{
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#ale#enabled = 1
-    let g:airline#extensions#branch#enabled = 1
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_nr_show = 1
-    let g:airline_theme='dracula'
+    " let g:airline_powerline_fonts = 1
+    " let g:airline#extensions#ale#enabled = 1
+    " let g:airline#extensions#branch#enabled = 1
+    " let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#tabline#buffer_nr_show = 1
+    " let g:airline_theme='dracula'
   " }}}
 
   " deoplete {{{
     let g:deoplete#enable_at_startup  = 1
+  " }}}
+
+  " lightline {{{
+    let g:lightline = {
+          \ 'colorscheme': 'dracula',
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ],
+          \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+          \ },
+          \ 'component_function': {
+          \   'gitbranch': 'fugitive#head'
+          \ },
+          \ }
   " }}}
 
   " LanguageClient-neovim {{{
