@@ -71,6 +71,15 @@
     Plug 'moll/vim-node'
     Plug 'leafgarland/typescript-vim'
     Plug 'elzr/vim-json'
+    Plug 'Quramy/vison'
+    Plug 'rstacruz/vim-node-import'
+    Plug 'retorillo/istanbul.vim'
+    Plug 'neoclide/npm.nvim'
+  " }}}
+
+  " Rust {{{
+    Plug 'rust-lang/rust.vim'
+    Plug 'racer-rust/vim-racer'
   " }}}
 
   " Source Versioning {{{
@@ -160,6 +169,11 @@
 
   " nerdcommenter {{{
     let g:NERDSpaceDelims = 1
+    let g:NERDDefaultAlign = 'left'
+  " }}}
+
+  " rust {{{
+    let g:rustfmt_autosave = 1
   " }}}
 
   " vim-javascript {{{
@@ -236,9 +250,7 @@
     endif
   " }}}
 
-  " Enable syntax highlighting
-  syntax enable
-  " Set symbo
+  " Set symbols
   set listchars=space:.,eol:$,tab:>-,trail:.,extends:>,precedes:<,nbsp:_
   " Show file title in terminal tab
   set title
@@ -279,15 +291,27 @@
   " }}}
 
   " File navigation {{{
+    " ale {{{
+      nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+      nmap <silent> <leader>j <Plug>(ale_next_wrap)
+    " }}}
+
+    " nerdtree {{{
+    nmap <C-k><C-b> :NERDTreeToggle<CR>
+    " }}}
+
     " fzf {{{
       nmap <leader>f :call fzf#run(
             \fzf#wrap({
             \'source': 'git ls-files --exclude-standard --others --cached'
             \}))<cr>
+
       nmap <leader>F :call fzf#run(
             \fzf#wrap({
             \'source': 'git ls-files --exclude-standard --others --cached'
             \}, 1))<cr>
+
+      nmap <leader>r :Rg <C-R>"<CR>
     " }}}
 
     " buffers {{{
@@ -304,18 +328,28 @@
   " }}}
 
   " Saved Macros {{{
-    function! FormatCWLogs()
+    function! FormatCloudWatchLogs()
       normal 0v$:s/] /]\r/gggvG:sort
     endfunction
   " }}}
 
-  nmap <leader>t :call VimuxRunCommand("./node_modules/.bin/mocha " .
-      \ expand('%'))<CR>
-
   map <leader>a :ALEFix<CR>
+  map <leader>A :A<CR>
+  map <leader>I :IstanbulToggle<CR>
   map <leader>y "*y
   map <leader>P "*p
-" }}}
 
+  " let g:clipboard = {
+        " \   'name': 'xclip-custom',
+        " \   'copy': {
+        " \      '+': 'xclip -quiet -i -selection clipboard',
+        " \      '*': 'xclip -quiet -i -selection primary',
+        " \    },
+        " \   'paste': {
+        " \      '+': 'xclip -o -selection clipboard',
+        " \      '*': 'xclip -o -selection primary',
+        " \   },
+        " \ }
+" }}}
 
 " vim: foldmethod=marker:foldlevel=0
