@@ -3,8 +3,8 @@
 ! ------------------------------------------------------------------------------
 Xft.dpi:        96
 Xft.antialias:  true
-Xft.autohint:   true
-Xft.hinting:    true
+Xft.autohint:   false
+Xft.hinting:    false
 Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
@@ -25,8 +25,9 @@ Xft.rgba:       rgb
 ! ------------------------------------------------------------------------------
 ! URxvt
 ! ------------------------------------------------------------------------------
-URxvt.font:             xft:sauceCodePro Nerd Font:style=Regular:pixelsize=12
-URxvt*boldFont:         xft:sauceCodePro Nerd Font:style=Bold
+URxvt.font:             xft:PragmataPro Mono:pixelsize=14
+!URxvt.font:             xft:sauceCodePro Nerd Font:style=Regular:pixelsize=12
+!URxvt*boldFont:         xft:sauceCodePro Nerd Font:style=Bold
 URxvt*cursorUnderline:  true
 URxvt*transparent:      true
 URxvt.depth:            32
