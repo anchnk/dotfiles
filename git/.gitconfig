@@ -51,6 +51,8 @@
 	showUntrackedFiles = all
 [includeIf "gitdir:~/code/"]
   path = ~/.gitconfig.oss
+[includeIf "gitdir:~/bin"]
+  path = ~/.gitconfig.oss
 [includeIf "gitdir:/usr/local/"]
   path = ~/.gitconfig.inhouse
 [url "https://"]
